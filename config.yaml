@@ -54,6 +54,9 @@ params:
     - icon: linkedin
       icon_pack: fab
       url: https://linkedin.com/juansqw
+    - icon: user
+      icon_pack: fa
+      url: /themes/hugo-apero/static/cv.html
   socialInFooter: yes
   socialInHeader: no
   textFontFamily: sans-serif

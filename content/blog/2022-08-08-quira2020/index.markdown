@@ -1,5 +1,5 @@
 ---
-title: "Inflation density forecast in the Dominican Republic"
+title: "Inflation density forecast for the Dominican Republic"
 author: "Juan Quinonez"
 date: '2022-08-08'
 output: html_document
@@ -9,6 +9,7 @@ categories:
   - R
 tags: []
 excerpt: In recent years, the literature is pointing out that not only inflation trajectory is important, but also the uncertainty that surrounds inflation projections.
+featured_image: "fanchart.png"
 ---
 
 Ever since countries have adopted the Inflation Targeting Scheme for monetary policy, inflation and inflation forecast has played a central role for central banks. In recent years, the literature is pointing out that not only inflation trajectory is important, but also the uncertainty that surrounds inflation projections.
@@ -25,13 +26,13 @@ In [this document](https://cdn.bancentral.gov.do/documents/trabajos-de-investiga
 
 <div id="ref-HALL20071" class="csl-entry">
 
-Hall, Stephen G., and James Mitchell. 2007. “Combining Density Forecasts.” *International Journal of Forecasting* 23 (1): 1–13. https://doi.org/<https://doi.org/10.1016/j.ijforecast.2006.08.001>.
+Hall, Stephen G., and James Mitchell. 2007. “Combining Density Forecasts.” *International Journal of Forecasting* 23 (1): 1–13. <https://www.sciencedirect.com/science/article/pii/S0169207006000768>.
 
 </div>
 
 <div id="ref-QuiRa2020" class="csl-entry">
 
-Quinonez, Juan, and Nerys Ramirez. 2020. “Inflation Density Forecast in the Dominican Republic.” *Oeconomia* 14 (2): 20–30. <https://cdn.bancentral.gov.do/documents/trabajos-de-investigacion/documents/coleccion_ensayos_vol_xiv_no2.pdf?v=1655153256246>.
+Quinonez, Juan, and Nerys Ramirez. 2020. “Inflation Density Forecast for the Dominican Republic.” *Oeconomia* 14 (2): 20–30. <https://cdn.bancentral.gov.do/documents/trabajos-de-investigacion/documents/coleccion_ensayos_vol_xiv_no2.pdf?v=1655153256246>.
 
 </div>
 

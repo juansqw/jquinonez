@@ -1,0 +1,261 @@
+---
+title: "Juan S. Quiñónez Wu"
+author: Juan Quinonez
+date: "`r Sys.Date()`"
+output:
+  pagedown::html_resume:
+    css:
+      - custom.css
+      - resume
+    # set it to true for a self-contained HTML page but it'll take longer to render
+    self_contained: false
+# uncomment this line to produce HTML and PDF in RStudio:
+knit: pagedown::chrome_print
+---
+
+```{css, echo=FALSE}
+.pagedjs_page:not(:first-of-type) {
+  --sidebar-width: 0rem; /* side bar width */
+  --main-width: calc(var(--content-width) - var(--sidebar-width))
+}
+```
+
+Aside
+================================================================================
+
+
+<!-- ![Lijia Yu](https://avatars1.githubusercontent.com/u/895125?s=400&v=4){width=80%} -->
+
+
+Contact Info {#contact}
+--------------------------------------------------------------------------------
+
+- <i class="fa fa-envelope"></i> juansqw@gmail.com
+- <i class="fa fa-github"></i> [github.com/juansqw](https://github.com/juansqw)
+- <i class="fa fa-phone"></i> +1 809-481-3197
+<!-- - For more information, please contact me via email. -->
+
+
+Skills {#skills}
+--------------------------------------------------------------------------------
+
+- Experienced in statistical analysis, statistical learning models, and optimization methods.
+
+- Highly skilled in R, and MS Office.
+
+
+Disclaimer {#disclaimer}
+--------------------------------------------------------------------------------
+
+This resume was made with the R package [**pagedown**](https://github.com/rstudio/pagedown).
+
+Last updated on `r Sys.Date()`.
+
+
+
+Main
+================================================================================
+
+Juan S. Quiñónez Wu {#title}
+--------------------------------------------------------------------------------
+
+### M.Sc. Applied Economics
+
+Experienced professional in economic research and statistical analysis.
+Highly developed methodological, analytic, creative, and advanced skills in
+machine learning, with vast experience in risk management, development and
+implementation of credit strategies in the banking sector. Self-motivated
+executive with experience in project management and data mining.
+
+Professional Experience {data-icon=suitcase}
+--------------------------------------------------------------------------------
+
+### Technical assistant
+
+Central Bank of the Dominican Republic </br> Monetary Programming and Economic Studies Department
+
+N/A
+
+May 2019 - Current
+
+- Collaborate on forecasting short-term macroeconomic outlook presented to local monetary policy makers.
+- Devise and conduct empirical economic researches and analysis to be later presented on different forums (such as CIRET and CMCA).
+- Present and analyze economic sectors with special focus on tourism.
+- Automate data collection processes, using several web scrapping techniques.
+- Organize and promote economic research seminars, in which local and international panelists are invited.
+
+### Credit risk manager
+
+Banco Múltiple Promerica </br> Credit Risk Department
+
+N/A
+
+Feb. 2018 - May 2019
+
+- Help Credit Collections Department analyzing and identifying customer behavior related to delinquency and fraud.
+- Manage clients' databases and elaborate credit risk profiles in order to make tailored offers for each client.
+- Present delinquency ratios for each product to the Board of Directors.
+- Build and maintain databases and dashboards to centralize information of credit performance.
+- Propose credit origination rules that prevented entry of delinquent clients based on statistical analysis of the current credit portfolio.
+- Complete validation of origination and behavior score models.
+- Develop country-risk index using macroeconomic variables.
+
+### Economics studies manager
+
+Banco Múltiple BHD León </br> Credit Risk Department
+
+N/A
+
+Nov. 2016 - Feb. 2018
+
+- Carry out diagnosis, monitoring and forecast of economic trends as well as broader view of international economics indicators.
+- Contribute on presentations on the latest economic developments (local and international) and deliver said presentations to the Pricing Committee and corporate clients.
+- Maintain and improve macroeconomic database, which included local and international information.
+- Develop macroeconomic-risk index using macroeconomic variables.
+- Develop industry-risk index using tax collection data and other macroeconomic variables.
+
+### Modelling manager
+
+Banco Múltiple BHD León </br> Credit Risk Department
+
+N/A
+
+Dec. 2015 - Nov. 2016
+
+- Successful implementation of OM-DM, a powerful platform developed by FICO, used for creating, maintaining, and testing origination decision strategies. This platform was used for credit card and consumer loans origination.
+- Help improve credit card origination workflow, reducing origination time by 60%.
+- Create module of counter-offers, which provided credit card offers based on client profiles and payment history.
+- Complete validation of origination and behavior score models.
+
+### Credit portfolio senior analyst
+
+Banco Múltiple León </br> Credit Risk Department
+
+N/A
+
+Apr. 2013 - Aug. 2014
+
+- Monitor origination strategies using FICO's former OM-DM platform (CDA).
+- Create credit card and personal loans origination reports.
+- Collaborate with the development of small business credit score model.
+- Prepare economic outlook briefings for the Credit Risk Committee.
+
+Teaching Experience {data-icon=chalkboard-teacher}
+--------------------------------------------------------------------------------
+
+### Introduction to Machine Learning for Central Banks.
+
+Consejo Monetario Centroamericano
+
+N/A
+
+2021
+
+### Linear Programming, Statistics & Econometrics
+
+Pontificia Universidad Católica Madre y Maestra (PUCMM)
+
+N/A
+
+2017 - 2022
+
+Selected Publications and Posters {data-icon=file}
+--------------------------------------------------------------------------------
+
+### [Dynamics of oil price volatility and pass-through effect on the economy of the Dominican Republic](https://www.bancentral.gov.do/a/d/2584-documentos-de-trabajo#)
+
+**Juan S. Quiñónez** y Nerys F. Ramírez
+
+N/A
+
+2022
+
+
+
+### [Variation of inflation trend and changes in prediction strategies during COVID-19 pandemic](https://cdn.bancentral.gov.do/documents/trabajos-de-investigacion/documents/coleccion_ensayos_vol_xv_no4.pdf?v=1655153256246)
+
+**Juan S. Quiñónez**, Nerys F. Ramírez y Valeria González
+
+N/A
+
+2021
+
+
+
+### [Conditional volatility and spill-over risk contagion of the EMBI during COVID-19 pandemic](https://cdn.bancentral.gov.do/documents/trabajos-de-investigacion/documents/coleccion_ensayos_vol_xv_no3.pdf?v=1655153256246)
+
+**Juan S. Quiñónez**, Nerys F. Ramírez y Valeria González
+
+N/A
+
+2021
+
+
+
+### [Short-term inflation forecast using article price predictions](https://cdn.bancentral.gov.do/documents/trabajos-de-investigacion/documents/coleccion_ensayos_vol_xv_no2.pdf?v=1655153256246)
+
+**Juan S. Quiñónez** y Nerys F. Ramírez
+
+N/A
+
+2021
+
+
+
+### [Inflation density forecast in the Dominican Republic](https://cdn.bancentral.gov.do/documents/trabajos-de-investigacion/documents/coleccion_ensayos_vol_xiv_no2.pdf?v=1655153256246)
+
+**Juan S. Quiñónez** y Nerys F. Ramírez
+
+N/A
+
+2020
+
+
+
+### [Economic uncertainty, monetary policy, and entropy of expectations in the Dominican Republican: an approach based on text mining algorithms and neural networks](https://bancentral.gov.do/a/d/2584-documentos-de-trabajo#)
+
+Lisette Santana, Johan Rosa, **Juan S. Quiñónez**
+
+N/A
+
+2020
+
+
+
+Education {data-icon=graduation-cap data-concise=true}
+--------------------------------------------------------------------------------
+
+### Utah State University
+
+M.Sc. Applied Economics
+
+Utah, USA
+
+2015
+
+
+
+### Instituto Tecnológico de Santo Domingo (INTEC)
+
+Statistics for Business
+
+Santo Domingo, DOM
+
+2013
+
+
+
+### Pontificia Universidad Católica Madre y Maestra (PUCMM)
+
+B.A. Economics
+
+Santo Domingo, DOM
+
+2012
+
+
+  
+
+
+
+

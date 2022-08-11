@@ -11,6 +11,7 @@ bibliography: 'cited_works.bib'
 featured_image: featured.png
 weight: 1
 ---
+
 In different fields of science it is often discussed the right tools to have certain jobs done. On this matter, it is common to have a little friendly arguments on "why R is better for this" or "how Python excels on this other thing". In the end, the best tool is the one you know and feel more comfortable to work with.
 
 Regarding Python and R, both are programming languages and have more things in common than differences. In my opinion, choosing one tool over the other is a matter of preference.
