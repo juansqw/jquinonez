@@ -9,10 +9,32 @@ about:
       href: https://twitter.com
     - icon: linkedin
       text: LinkedIn
-      href: https://linkedin.com/juansqw
+      href: www.linkedin.com/in/juan-quinonez
     - icon: github
       text: Github
       href: https://github.com/juansqw
 ---
 
-About this blog
+Experienced professional in economic research and statistical analysis. Highly developed methodological, analytic, creative, and advanced skills in machine learning, with vast experience in risk management, development and implementation of credit strategies in the banking sector. Self-motivated executive with experience in project management and data mining.
+
+### Professional Experience
+
+**Division Chief** <br> August 2022 - Current
+
+Central Bank of the Dominican Republic <br> Monetary Programming and Economic Studies Department
+
+**Technical Assistant** <br> May 2019 - August 2022
+
+Central Bank of the Dominican Republic <br> Monetary Programming and Economic Studies Department
+
+**Credit Risk Manager** <br> February 2018 - May 2019
+
+Banco Múltiple Promerica <br> Risk Department
+
+**Economic Studies Manager** <br> November 2016 - February 2018
+
+Banco BHD León <br> Risk Department
+
+**Modelling Manager** <br> December 2015 - November 2016
+
+Banco BHD León <br> Risk Department

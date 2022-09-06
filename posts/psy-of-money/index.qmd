@@ -3,7 +3,7 @@ title: "The Psycology of Money - Book review"
 author: "Juan Quinonez"
 date: "2022-08-19"
 categories: [books, reviews, money]
-draft: false
+draft: true
 ---
 
 I recently finished reading Morgan Housel "The Psychology of Money" and here I share my thoughts and impressions of this book.
