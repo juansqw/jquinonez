@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "posts/quira2020/index.html",
+    "href": "posts/quira2020/index.html",
+    "title": "Inflation Density Forecast for the Dominican Republic",
+    "section": "",
+    "text": "Ever since countries have adopted the Inflation Targeting Scheme for monetary policy, inflation and inflation forecast has played a central role for central banks. In recent years, the literature is pointing out that not only inflation trajectory is important, but also the uncertainty that surrounds inflation projections.\nHall and Mitchell (2007) and other authors (Rossi (2014)) propose the use of fancharts to show the central path of forecast, but also the uncertainty of these projections (on shaded areas).\nIn this document, my dear friend Nerys and I use a normal density function, with asymmetry and changing variance in time to obtain the density of the inflation forecast and the uncertainty related to the historic forecast error on different horizons."
+  },
+  {
+    "objectID": "posts/psy-of-money/index.html",
+    "href": "posts/psy-of-money/index.html",
+    "title": "The Psycology of Money - Book review",
+    "section": "",
+    "text": "I liked this book because it showed that what we think of money is not as black and white as we think. We tend to judge people that go bankrupt right after receiving a huge amount of money (from inheritance or winning the lottery), and people that spend most of their life saving money and living precariously. Housel explain each behavior as the result of what each individual experienced in their lives.\nThis post will summarize this reading and will highlight some of the concepts that got my attention.\n\nChapter 1 - Behavior based by experiences\n\nSaving and consumption decisions depend on what unique experiences an individual experienced in their lives (specially in their early youth).\n\n\n\nChapter 2 - Luck and risk\n\nThis chapter explained that people’s success (or misfortune) is a matter of luck. Bill Gates was lucky enough to study at (this) school that had access to a computer so that he (along with some friends) could set the foundations of Microsoft.\nDon’t act on other people’s success (or misfortune), rather study patterns.\n\n\n\nChapter 3 - Never enough\n\nLearn when enough is enough.\nIt’s hard to reach a goal when the goal post is moving every day.\n\n\n\nChapter 4 - Confounding compounding\n\nPlanet Earth was covered by ice several times. “The big take away from ice age is that you don’t need tremendous force to create tremendous results”.\n\n\n\nChapter 5 - Getting wealthy vs staying wealthy\n\nThere are a million books ways to get wealthy, but the only way to stay wealthy: some combination of frugality and paranoia.\nIf I had to summarize money success in one word it would be “survival”\nGetting money requires taking risks, being optimistic, and putting yourself out there.\nBut keeping money requires the opposite of taking risk.\n\nIt requires humility, and fear that what you’ve made can be taken away just from you just as fast."
+  },
+  {
+    "objectID": "posts/la_dash/index.html",
+    "href": "posts/la_dash/index.html",
+    "title": "Economic Dashboard for Latinamerica",
+    "section": "",
+    "text": "Recently I’ve been working on Shiny Apps developing dashboards and other kinds of visualizations. I was able to develop this dashboard using data from the CMCA database. This dashboard summarizes the information of some countries.\n\n\n\nLatin America Dashboard\n\n\nI used this project to practice using Shiny modules to create graphs and realized that I need to work on my CSS abilities. Even though I know how to use CSS, it is very challenging for me to define how i would like things to look like, so it’s almost impossible to come up with some “good-looking” designs.\nSomething else that I learned with this project was that I could use functions to reduce writing (and the probability of making a typing mistake). For example, in the UI section of the app, I had to write the same code for each country. Instead of this one can write a function containing how one country should look like and then pass it to a list of countries."
+  },
+  {
+    "objectID": "posts/mipa-2021/index.html",
+    "href": "posts/mipa-2021/index.html",
+    "title": "Methodology for forecasting short-term inflation using a bottom-up approach",
+    "section": "",
+    "text": "Inflation is a generalized increase in prices, measured from the relative variations of the price indexes of the products in a representative basket. This indicator is used to update contracts and make projections by agents in the economy.\nThis document (Quinonez and Ramirez 2021) presents one of the main short-term inflation forecasting methodologies used by the Central Bank of the Dominican Republic (BCRD), showing in detail the forecasting process.\nThe development of these price projections for each item of the basket of goods and services, in general, consists of the following steps:\nAfter this, the projection of each item is added using the weights of each one, thus obtaining a short-term inflation projection."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Un poco de todo",
+    "section": "",
+    "text": "books\n\n\nreviews\n\n\nmoney\n\n\n\n\n\n\n\n\n\n\n\nAug 19, 2022\n\n\nJuan Quinonez\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\neconomics\n\n\ndashboard\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nAug 19, 2022\n\n\nJuan Quinonez\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ninflation\n\n\nforecast\n\n\n\n\n\n\n\n\n\n\n\nJun 1, 2021\n\n\nJuan Quinonez\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\ninflation\n\n\ndensity\n\n\nforecast\n\n\n\n\n\n\n\n\n\n\n\nJun 1, 2020\n\n\nJuan Quinonez\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  }
+]
