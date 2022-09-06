@@ -1,0 +1,100 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Un poco de todo",
+    "section": "",
+    "text": "books\n\n\nreviews\n\n\nmoney\n\n\n\n\n\n\n\n\n\n\n\nAug 19, 2022\n\n\nJuan Quinonez\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\neconomics\n\n\ndashboard\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nAug 19, 2022\n\n\nJuan Quinonez\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ninflation\n\n\nforecast\n\n\n\n\n\n\n\n\n\n\n\nJun 1, 2021\n\n\nJuan Quinonez\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\ninflation\n\n\ndensity\n\n\nforecast\n\n\n\n\n\n\n\n\n\n\n\nJun 1, 2020\n\n\nJuan Quinonez\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/la_dash/index.html",
+    "href": "posts/la_dash/index.html",
+    "title": "Economic Dashboard for Latinamerica",
+    "section": "",
+    "text": "Recently I’ve been working on Shiny Apps developing dashboards and other kinds of visualizations. I was able to develop this dashboard using data from the CMCA database. This dashboard summarizes the information of some countries.\n\n\n\nLatin America Dashboard\n\n\nI used this project to practice using Shiny modules to create graphs and realized that I need to work on my CSS abilities. Even though I know how to use CSS, it is very challenging for me to define how i would like things to look like, so it’s almost impossible to come up with some “good-looking” designs.\nSomething else that I learned with this project was that I could use functions to reduce writing (and the probability of making a typing mistake). For example, in the UI section of the app, I had to write the same code for each country. Instead of this one can write a function containing how one country should look like and then pass it to a list of countries."
+  },
+  {
+    "objectID": "posts/psy-of-money/index.html",
+    "href": "posts/psy-of-money/index.html",
+    "title": "The Psycology of Money - Book review",
+    "section": "",
+    "text": "I recently finished reading Morgan Housel “The Psychology of Money” and here I share my thoughts and impressions of this book.\nI liked this book because it showed that what we think of money is not as black and white as we think. We tend to judge people that go bankrupt right after receiving a huge amount of money (from inheritance or winning the lottery), and people that spend most of their life saving money and living precariously. Housel explain each behavior as the result of what each individual experienced in their lives.\nThis post will summarize this reading and will highlight some of the concepts that got my attention."
+  },
+  {
+    "objectID": "posts/psy-of-money/index.html#behavior-based-by-experiences",
+    "href": "posts/psy-of-money/index.html#behavior-based-by-experiences",
+    "title": "The Psycology of Money - Book review",
+    "section": "Behavior based by experiences",
+    "text": "Behavior based by experiences\n\nSaving and consumption decisions depend on what unique experiences an individual experienced in their lives (specially in their early youth)."
+  },
+  {
+    "objectID": "posts/2022-08-08-quira2020/index.html",
+    "href": "posts/2022-08-08-quira2020/index.html",
+    "title": "Economic Dashboard for Latinamerica",
+    "section": "",
+    "text": "Ever since countries have adopted the Inflation Targeting Scheme for monetary policy, inflation and inflation forecast has played a central role for central banks. In recent years, the literature is pointing out that not only inflation trajectory is important, but also the uncertainty that surrounds inflation projections."
+  },
+  {
+    "objectID": "posts/2022-08-08-quira2020/index.html#bibliography",
+    "href": "posts/2022-08-08-quira2020/index.html#bibliography",
+    "title": "Inflation density forecast for the Dominican Republic",
+    "section": "Bibliography",
+    "text": "Bibliography"
+  },
+  {
+    "objectID": "posts/quira2020/index.html",
+    "href": "posts/quira2020/index.html",
+    "title": "Inflation Density Forecast for the Dominican Republic",
+    "section": "",
+    "text": "Ever since countries have adopted the Inflation Targeting Scheme for monetary policy, inflation and inflation forecast has played a central role for central banks. In recent years, the literature is pointing out that not only inflation trajectory is important, but also the uncertainty that surrounds inflation projections.\nHall and Mitchell (2007) and other authors (Rossi (2014)) propose the use of fancharts to show the central path of forecast, but also the uncertainty of these projections (on shaded areas).\nIn this document, my dear friend Nerys and I use a normal density function, with asymmetry and changing variance in time to obtain the density of the inflation forecast and the uncertainty related to the historic forecast error on different horizons."
+  },
+  {
+    "objectID": "posts/psy-of-money/index.html#risk-and-luck",
+    "href": "posts/psy-of-money/index.html#risk-and-luck",
+    "title": "The Psycology of Money - Book review",
+    "section": "Risk and luck",
+    "text": "Risk and luck\n\nThis chapter explained that people’s success (or misfortune) is a matter of luck. Bill Gates was lucky enough to study at (this) school that had access to a computer so that he (along with some friends) could set the foundations of Microsoft.\nDont act on other people’s success (or misfortune), rather study patterns."
+  },
+  {
+    "objectID": "posts/psy-of-money/index.html#enough",
+    "href": "posts/psy-of-money/index.html#enough",
+    "title": "The Psycology of Money - Book review",
+    "section": "Enough",
+    "text": "Enough\n\nLearn when enough is enough.\nIt’s hard to reach a goal when the goal post is moving every day."
+  },
+  {
+    "objectID": "posts/mipa-2021/index.html",
+    "href": "posts/mipa-2021/index.html",
+    "title": "Methodology for forecasting short-term inflation using a bottom-up approach",
+    "section": "",
+    "text": "Inflation is a generalized increase in prices, measured from the relative variations of the price indexes of the products in a representative basket. This indicator is used to update contracts and make projections by agents in the economy.\nThis document (Quinonez and Ramirez 2021) presents one of the main short-term inflation forecasting methodologies used by the Central Bank of the Dominican Republic (BCRD), showing in detail the forecasting process.\nThe development of these price projections for each item of the basket of goods and services, in general, consists of the following steps:\nAfter this, the projection of each item is added using the weights of each one, thus obtaining a short-term inflation projection."
+  },
+  {
+    "objectID": "posts/mipa-2021/index.html#bibliography",
+    "href": "posts/mipa-2021/index.html#bibliography",
+    "title": "Methodology for forecasting short-term inflation using a bottom-up approach",
+    "section": "Bibliography",
+    "text": "Bibliography"
+  },
+  {
+    "objectID": "posts/mipa-2021/index_v1.html",
+    "href": "posts/mipa-2021/index_v1.html",
+    "title": "Methodology for forecasting short-term inflation using a bottom-up approach",
+    "section": "",
+    "text": "Inflation is a generalized increase in prices, measured from the relative variations of the price indexes of the products in a representative basket. This indicator is used to update contracts and make projections by agents in the economy.\nThis document presents one of the main short-term inflation forecasting methodologies used by the Central Bank of the Dominican Republic (BCRD), showing in detail the forecasting process.\nThe development of these price projections for each item of the basket of goods and services, in general, consists of the following steps:\nAfter this, the projection of each item is added using the weights of each one, thus obtaining a short-term inflation projection."
+  },
+  {
+    "objectID": "posts/mipa-2021/index_v1.html#bibliography",
+    "href": "posts/mipa-2021/index_v1.html#bibliography",
+    "title": "Methodology for forecasting short-term inflation using a bottom-up approach",
+    "section": "Bibliography",
+    "text": "Bibliography"
+  }
+]

@@ -1,0 +1,23 @@
+---
+title: "Methodology for forecasting short-term inflation using a bottom-up approach"
+author: "Juan Quinonez"
+date: "2021-06-01"
+bibliography: bibliografia.bib
+categories: [inflation, forecast]
+draft: false
+editor: visual
+---
+
+Inflation is a generalized increase in prices, measured from the relative variations of the price indexes of the products in a representative basket. This indicator is used to update contracts and make projections by agents in the economy.
+
+[This document](https://cdn.bancentral.gov.do/documents/trabajos-de-investigacion/documents/coleccion_ensayos_vol_xv_no2.pdf?v=1662326175330) [@QuiRa2021] presents one of the main short-term inflation forecasting methodologies used by the Central Bank of the Dominican Republic (BCRD), showing in detail the forecasting process.
+
+The development of these price projections for each item of the basket of goods and services, in general, consists of the following steps:
+
+1.  An iterative process is carried out to identify the models, both the autoregressive and moving average polynomials, as well as the levels of differentiation of the series.
+2.  The models are estimated by maximum likelihood using a moving window, as suggested in the literature.
+3.  A diagnosis of the models is made from the residuals.
+
+After this, the projection of each item is added using the weights of each one, thus obtaining a short-term inflation projection.
+
+## Bibliography

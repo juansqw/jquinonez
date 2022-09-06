@@ -1,0 +1,19 @@
+---
+title: "Inflation Density Forecast for the Dominican Republic"
+author: "Juan Quinonez"
+date: "2020-06-01"
+bibliography: bibliografia.bib
+categories: [inflation, density, forecast]
+draft: false
+editor: visual
+---
+
+Ever since countries have adopted the Inflation Targeting Scheme for monetary policy, inflation and inflation forecast has played a central role for central banks. In recent years, the literature is pointing out that not only inflation trajectory is important, but also the uncertainty that surrounds inflation projections.
+
+@HALL20071 and other authors (@Rossi_densityforecasts) propose the use of **fancharts** to show the central path of forecast, but also the uncertainty of these projections (on shaded areas).
+
+![Fanchart example. Taken from @QuiRa2020](fanchart.png)
+
+In [this document](https://cdn.bancentral.gov.do/documents/trabajos-de-investigacion/documents/coleccion_ensayos_vol_xiv_no2.pdf?v=1655153256246), my dear friend Nerys and I use a normal density function, with asymmetry and changing variance in time to obtain the density of the inflation forecast and the uncertainty related to the historic forecast error on different horizons.
+
+## Bibliography
