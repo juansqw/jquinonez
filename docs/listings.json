@@ -2,9 +2,16 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/series-cs/importance/index.html",
       "/posts/la_dash/index.html",
       "/posts/mipa-2021/index.html",
       "/posts/quira2020/index.html"
+    ]
+  },
+  {
+    "listing": "/series-cs.html",
+    "items": [
+      "/posts/series-cs/importance/index.html"
     ]
   }
 ]

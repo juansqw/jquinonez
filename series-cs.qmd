@@ -1,0 +1,16 @@
+---
+title: "Credit Score Series"
+subtitle: "In this serie we analyze in detail credit scores for retail."
+author: "Cesar Diaz & Juan Quinonez"
+editor: visual
+listing:
+  - id: posts-en
+    contents: posts/series-cs/*/*.qmd
+    type: default
+    fields: [image, date, title, subtitle, categories, author, reading-time]  
+    sort: "date desc"
+    categories: unnumbered
+    sort-ui: true
+    filter-ui: true
+    page-size: 3
+---

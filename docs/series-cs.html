@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Cesar Diaz &amp; Juan Quinonez">
 
-<title>Juan Quinonez - Un poco de todo</title>
+<title>Juan Quinonez - Credit Score Series</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -58,20 +59,20 @@ ul.task-list{list-style: none;}
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    const listingTargetEl = window.document.querySelector('#listing-posts-en .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-image','listing-date','listing-title','listing-subtitle','listing-categories','listing-author','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+    window['quarto-listings']['listing-posts-en'] = new List('listing-posts-en', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -133,38 +134,68 @@ ul.task-list{list-style: none;}
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Un poco de todo</h1>
-                      </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="analysis">analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="banking">banking <span class="quarto-category-count">(1)</span></div><div class="category" data-category="credit score">credit score <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dashboard">dashboard <span class="quarto-category-count">(1)</span></div><div class="category" data-category="density">density <span class="quarto-category-count">(1)</span></div><div class="category" data-category="economics">economics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="forecast">forecast <span class="quarto-category-count">(2)</span></div><div class="category" data-category="inflation">inflation <span class="quarto-category-count">(2)</span></div><div class="category" data-category="money">money <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-unnumbered"><div class="category" data-category="banking">banking</div><div class="category" data-category="credit score">credit score</div><div class="category" data-category="money">money</div></div></div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Credit Score Series</h1>
+<p class="subtitle lead">In this serie we analyze in detail credit scores for retail.</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Cesar Diaz &amp; Juan Quinonez </p>
+          </div>
+  </div>
+    
+    
+  </div>
+  
+
+</header>
 
 
 
 
 
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="quarto-listing quarto-listing-container-default" id="listing-posts-en">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-posts-en-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-posts-en'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-title" data-direction="asc">
+          Title
+        </option>
+         <option value="listing-date-sort" data-direction="asc">
+          Date - Oldest
+        </option>
+         <option value="listing-date-sort" data-direction="desc">
+          Date - Newest
+        </option>
+         <option value="listing-author" data-direction="asc">
+          Author
+        </option>
+     </select>
+  </div>
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
 <div class="list quarto-listing-default">
 <div class="quarto-post image-right" data-index="0" data-categories="credit score,banking,money" data-listing-date-sort="1662523200000" data-listing-file-modified-sort="1662602739220" data-listing-reading-time-sort="4.33">
 <div class="thumbnail">
@@ -194,11 +225,7 @@ banking
 money
 </div>
 </div>
-<a href="./posts/series-cs/importance/index.html">
-<div class="listing-description">
-Some businesses can choose who to offer their services to. Such is the case of commercial banks, insurance companies, real estate, among others. With increased competition in different sectors and marketing efforts to attract new customers, companies are faced with a pool of potential customers from which they must select profitable customers, with the highest probability of meeting their payments.
-</div>
-</a>
+<a href="./posts/series-cs/importance/index.html"> </a>
 </div>
 <div class="metadata">
 <a href="./posts/series-cs/importance/index.html">
@@ -208,129 +235,8 @@ Sep 7, 2022
 <div class="listing-author">
 Juan Quinonez
 </div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="economics,dashboard,analysis" data-listing-date-sort="1660881600000" data-listing-file-modified-sort="1660908646110" data-listing-reading-time-sort="0.805">
-<div class="thumbnail">
-<p><a href="./posts/la_dash/index.html"> <img src="./posts/la_dash/la_smpl.png" class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/la_dash/index.html">
-<h3 class="no-anchor listing-title">
-Economic Dashboard for Latinamerica
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('economics'); return false;">
-economics
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('dashboard'); return false;">
-dashboard
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('analysis'); return false;">
-analysis
-</div>
-</div>
-<a href="./posts/la_dash/index.html">
-<div class="listing-description">
-Recently I’ve been working on Shiny Apps developing dashboards and other kinds of visualizations. I was able to develop this dashboard using data from the CMCA database. This dashboard summarizes the information of some countries.
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/la_dash/index.html">
-<div class="listing-date">
-Aug 19, 2022
-</div>
-<div class="listing-author">
-Juan Quinonez
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="inflation,forecast" data-listing-date-sort="1622520000000" data-listing-file-modified-sort="1662424491321" data-listing-reading-time-sort="0.815">
-<div class="thumbnail">
-<a href="./posts/mipa-2021/index.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/mipa-2021/index.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/mipa-2021/index.html">
-<h3 class="no-anchor listing-title">
-Methodology for forecasting short-term inflation using a bottom-up approach
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('inflation'); return false;">
-inflation
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('forecast'); return false;">
-forecast
-</div>
-</div>
-<a href="./posts/mipa-2021/index.html">
-<div class="listing-description">
-Inflation is a generalized increase in prices, measured from the relative variations of the price indexes of the products in a representative basket. This indicator is used to update contracts and make projections by agents in the economy.
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/mipa-2021/index.html">
-<div class="listing-date">
-Jun 1, 2021
-</div>
-<div class="listing-author">
-Juan Quinonez
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="inflation,density,forecast" data-listing-date-sort="1590984000000" data-listing-file-modified-sort="1662326221273" data-listing-reading-time-sort="0.585">
-<div class="thumbnail">
-<p><a href="./posts/quira2020/index.html"> <img src="./posts/quira2020/fanchart.png" class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/quira2020/index.html">
-<h3 class="no-anchor listing-title">
-Inflation Density Forecast for the Dominican Republic
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('inflation'); return false;">
-inflation
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('density'); return false;">
-density
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('forecast'); return false;">
-forecast
-</div>
-</div>
-<a href="./posts/quira2020/index.html">
-<div class="listing-description">
-Ever since countries have adopted the Inflation Targeting Scheme for monetary policy, inflation and inflation forecast has played a central role for central banks. In recent years, the literature is pointing out that not only inflation trajectory is important, but also the uncertainty that surrounds inflation projections.
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/quira2020/index.html">
-<div class="listing-date">
-Jun 1, 2020
-</div>
-<div class="listing-author">
-Juan Quinonez
+<div class="listing-reading-time">
+4 min
 </div>
 </a>
 </div>

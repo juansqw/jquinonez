@@ -6,6 +6,8 @@ categories: [books, reviews, money]
 draft: true
 ---
 
+NOT IN THE SERIE
+
 I recently finished reading Morgan Housel "The Psychology of Money" and here I share my thoughts and impressions of this book.
 
 I liked this book because it showed that what we think of money is not as black and white as we think. We tend to judge people that go bankrupt right after receiving a huge amount of money (from inheritance or winning the lottery), and people that spend most of their life saving money and living precariously. Housel explain each behavior as the result of what each individual experienced in their lives.

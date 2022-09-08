@@ -7,6 +7,10 @@ website:
   navbar:
     right:
       - about.qmd
+      - text: Series
+        menu:
+          - text: Credit Score
+            href: series-cs.qmd
       - icon: github
         href: https://github.com/juansqw
       - icon: linkedin
