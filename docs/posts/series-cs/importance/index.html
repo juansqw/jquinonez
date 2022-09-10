@@ -80,7 +80,7 @@ div.csl-indent {
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -123,7 +123,7 @@ div.csl-indent {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title">The Importance of a Credit Score</h1>
@@ -158,8 +158,12 @@ div.csl-indent {
   
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-<!-- margin-sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
     
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
@@ -175,69 +179,69 @@ div.csl-indent {
 <table class="table">
 <caption>Table 1: Credit Score</caption>
 <colgroup>
-<col style="width: 19%">
-<col style="width: 19%">
-<col style="width: 20%">
-<col style="width: 19%">
-<col style="width: 20%">
+<col style="width: 8%">
+<col style="width: 18%">
+<col style="width: 27%">
+<col style="width: 18%">
+<col style="width: 26%">
 </colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: center;">Score</th>
-<th>Number of Good Clients</th>
+<th style="text-align: center;">Number of Good Clients</th>
 <th style="text-align: center;">Cumulative Number of Good Clients</th>
-<th>Number of Bad Clients</th>
+<th style="text-align: center;">Number of Bad Clients</th>
 <th style="text-align: center;">Cumulative Number of Bad Clients</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">175 - 200</td>
-<td>115</td>
 <td style="text-align: center;">115</td>
-<td>10</td>
+<td style="text-align: center;">115</td>
+<td style="text-align: center;">10</td>
 <td style="text-align: center;">10</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">150 - 174</td>
-<td>105</td>
+<td style="text-align: center;">105</td>
 <td style="text-align: center;">220</td>
-<td>20</td>
+<td style="text-align: center;">20</td>
 <td style="text-align: center;">30</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">125 - 149</td>
-<td>95</td>
+<td style="text-align: center;">95</td>
 <td style="text-align: center;">315</td>
-<td>30</td>
+<td style="text-align: center;">30</td>
 <td style="text-align: center;">60</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">100 - 124</td>
-<td>85</td>
+<td style="text-align: center;">85</td>
 <td style="text-align: center;">400</td>
-<td>40</td>
+<td style="text-align: center;">40</td>
 <td style="text-align: center;">100</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">75 - 99</td>
-<td>75</td>
+<td style="text-align: center;">75</td>
 <td style="text-align: center;">475</td>
-<td>50</td>
+<td style="text-align: center;">50</td>
 <td style="text-align: center;">150</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">50 - 74</td>
-<td>65</td>
+<td style="text-align: center;">65</td>
 <td style="text-align: center;">540</td>
-<td>60</td>
+<td style="text-align: center;">60</td>
 <td style="text-align: center;">210</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">0 - 49</td>
-<td>55</td>
+<td style="text-align: center;">55</td>
 <td style="text-align: center;">595</td>
-<td>70</td>
+<td style="text-align: center;">70</td>
 <td style="text-align: center;">280</td>
 </tr>
 </tbody>
@@ -245,9 +249,12 @@ div.csl-indent {
 </div>
 <p>Author’s elaboration</p>
 <p><a href="#tbl-sc">Table&nbsp;1</a> shows an example of a credit score and the cumulative number of good and bad clients. Using this information businesses may choose to serve only clients with credit scores above 125. This would mean that they will serve 375 clients, 315 will be good clients and 60 will be bad clients, which implies that, given the cut-off score, 16% of the clients may be bad clients. Low cut-off score will increase the potential clients, but will also increase the chance of getting bad clients.</p>
-<p>This table also shows that for every score, there are good and also bad clients. As a business standard, businesses set a score range in which expert analysis is needed to make a decision. Credit ratings, in sum, are a mix of qualitative and quantitative criteria used to assess the potential clients, but should also expert analysis at the end of the decision process.</p>
-<p>Credit scores help asses client creditworthiness, and also allows clients to access better pricing for services.</p>
-<p>How are credit scores calibrated? Which characteristics influence in this scale? These, and more questions are soon to be answered in latter posts.</p>
+<p>This table also shows that for every score, there are good and also bad clients, which leads to interpret credit scores as a relative risk metric, indicating the likelihood of a consumer that will not be able to honor its obligations in the short-term. Hence, this score is related to the <a href="https://cesardt97.github.io/Blog/posts/series-sc/intro-to-the-study-serie/09-05-2022_intro_study_serie.html">probability of default</a>, usually, the greater the score, the lower the probability of default.</p>
+<p>As a business standard, businesses set a score range in which expert analysis is needed to make a decision. Credit ratings, in sum, are a mix of qualitative and quantitative criteria used to assess the potential clients, but should also expert analysis at the end of the decision process.</p>
+<p>Credit scores help asses client creditworthiness, and also allows clients to access better pricing for services. As mentioned above, this metrics summarizes the characteristics of a potential customer, but it does not take into account the macroeconomic context. This means that it is possible that one can find a great customer, with excellent credit score, but cannot honor his debts due to an economic crisis that caused him to loose his job. This limitations should be taken into consideration for further research.</p>
+<p>How are credit scores calibrated?</p>
+<p>Which characteristics influence in this scale?</p>
+<p>These, and more questions are soon to be answered in latter posts.</p>
 
 
 
@@ -259,16 +266,16 @@ Bessis, Joël. 2015. <span>“Risk Management in Banking.”</span>
 <div id="ref-Siddiqi2006" class="csl-entry" role="doc-biblioentry">
 Siddiqi, Nadim. 2006. <span>“Credit Risk Scorecards: Developing and Implementing Intelligent Credit Scoring.”</span>
 </div>
-</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{díaztavera2022,
+</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{díaztavera2022,
   author = {César Díaz Tavera and Juan Quiñonez Wu},
   title = {The {Importance} of a {Credit} {Score}},
   date = {2022-09-07},
-  url = {https://cesardt97.github.io/Blog/posts/series-sc/intro-to-the-study-serie/09-05-2022_intro_study_serie.html},
+  url = {https://juansqw.github.io/jquinonez/posts/series-cs/importance/},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-díaztavera2022" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
 César Díaz Tavera, and Juan Quiñonez Wu. 2022. <span>“The Importance of
-a Credit Score.”</span> September 7, 2022. <a href="https://cesardt97.github.io/Blog/posts/series-sc/intro-to-the-study-serie/09-05-2022_intro_study_serie.html">https://cesardt97.github.io/Blog/posts/series-sc/intro-to-the-study-serie/09-05-2022_intro_study_serie.html</a>.
+a Credit Score.”</span> September 7, 2022. <a href="https://juansqw.github.io/jquinonez/posts/series-cs/importance/">https://juansqw.github.io/jquinonez/posts/series-cs/importance/</a>.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {

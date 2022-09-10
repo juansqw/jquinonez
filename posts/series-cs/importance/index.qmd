@@ -27,14 +27,14 @@ On the other hand, clients seek to improve their scores by making various modifi
 Once selected, clients can negotiate additional services or lower prices, given their score level, i.e. clients of a commercial bank with a better credit score can receive preferential lending rates.
 
 |   Score   | Number of Good Clients | Cumulative Number of Good Clients | Number of Bad Clients | Cumulative Number of Bad Clients |
-|:------------:|--------------|:-------------:|--------------|:-------------:|
-| 175 - 200 | 115                    |                115                | 10                    |                10                |
-| 150 - 174 | 105                    |                220                | 20                    |                30                |
-| 125 - 149 | 95                     |                315                | 30                    |                60                |
-| 100 - 124 | 85                     |                400                | 40                    |               100                |
-|  75 - 99  | 75                     |                475                | 50                    |               150                |
-|  50 - 74  | 65                     |                540                | 60                    |               210                |
-|  0 - 49   | 55                     |                595                | 70                    |               280                |
+|:---------:|:----------------------:|:---------------------------------:|:---------------------:|:--------------------------------:|
+| 175 - 200 |          115           |                115                |          10           |                10                |
+| 150 - 174 |          105           |                220                |          20           |                30                |
+| 125 - 149 |           95           |                315                |          30           |                60                |
+| 100 - 124 |           85           |                400                |          40           |               100                |
+|  75 - 99  |           75           |                475                |          50           |               150                |
+|  50 - 74  |           65           |                540                |          60           |               210                |
+|  0 - 49   |           55           |                595                |          70           |               280                |
 
 : Credit Score {#tbl-sc}
 
@@ -42,8 +42,14 @@ Author's elaboration
 
 @tbl-sc shows an example of a credit score and the cumulative number of good and bad clients. Using this information businesses may choose to serve only clients with credit scores above 125. This would mean that they will serve 375 clients, 315 will be good clients and 60 will be bad clients, which implies that, given the cut-off score, 16% of the clients may be bad clients. Low cut-off score will increase the potential clients, but will also increase the chance of getting bad clients.
 
-This table also shows that for every score, there are good and also bad clients. As a business standard, businesses set a score range in which expert analysis is needed to make a decision. Credit ratings, in sum, are a mix of qualitative and quantitative criteria used to assess the potential clients, but should also expert analysis at the end of the decision process.
+This table also shows that for every score, there are good and also bad clients, which leads to interpret credit scores as a relative risk metric, indicating the likelihood of a consumer that will not be able to honor its obligations in the short-term. Hence, this score is related to the [probability of default](https://cesardt97.github.io/Blog/posts/series-sc/intro-to-the-study-serie/09-05-2022_intro_study_serie.html), usually, the greater the score, the lower the probability of default.
 
-Credit scores help asses client creditworthiness, and also allows clients to access better pricing for services.
+As a business standard, businesses set a score range in which expert analysis is needed to make a decision. Credit ratings, in sum, are a mix of qualitative and quantitative criteria used to assess the potential clients, but should also expert analysis at the end of the decision process.
 
-How are credit scores calibrated? Which characteristics influence in this scale? These, and more questions are soon to be answered in latter posts.
+Credit scores help asses client creditworthiness, and also allows clients to access better pricing for services. As mentioned above, this metrics summarizes the characteristics of a potential customer, but it does not take into account the macroeconomic context. This means that it is possible that one can find a great customer, with excellent credit score, but cannot honor his debts due to an economic crisis that caused him to loose his job. This limitations should be taken into consideration for further research.
+
+How are credit scores calibrated?
+
+Which characteristics influence in this scale?
+
+These, and more questions are soon to be answered in latter posts.
