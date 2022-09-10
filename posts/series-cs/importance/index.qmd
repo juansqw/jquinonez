@@ -10,7 +10,7 @@ bibliography: bibliografia.bib
 categories: [credit score, banking, money]
 draft: false
 citation:
-  url: https://cesardt97.github.io/Blog/posts/series-sc/intro-to-the-study-serie/09-05-2022_intro_study_serie.html
+  url: https://juansqw.github.io/jquinonez/posts/series-cs/importance/
 params:
   slug: key-concepts-credit-score
   date: 2022-09-07
