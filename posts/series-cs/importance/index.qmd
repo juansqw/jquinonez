@@ -1,38 +1,48 @@
 ---
 title: "The Importance of a Credit Score"
-author: "Juan Quinonez"
+author: 
+  - name: César Díaz Tavera
+    email: cesartavera97@gmail.com
+  - name: Juan Quiñonez Wu
+    email: juansqw@gmail.com
 date: "2022-09-07"
+bibliography: bibliografia.bib
 categories: [credit score, banking, money]
 draft: false
+citation:
+  url: https://cesardt97.github.io/Blog/posts/series-sc/intro-to-the-study-serie/09-05-2022_intro_study_serie.html
+params:
+  slug: key-concepts-credit-score
+  date: 2022-09-07
 ---
 
 Some businesses can choose who to offer their services to. Such is the case of commercial banks, insurance companies, real estate, among others. With increased competition in different sectors and marketing efforts to attract new customers, companies are faced with a pool of potential customers from which they must select profitable customers, with the highest probability of meeting their payments.
 
 However, companies do not always have complete information about customers, so they cannot perfectly discriminate between good customers and bad customers. This puts companies on the downside of adverse selection in this type of business.
 
-Credit scores opportunistically seek to correct the selection problems of these entities by summarizing a set of customer characteristics into a score. The central idea of these scales is to score customers according to a set of characteristics and to identify those attributes inherent in good and bad customers.
+Credit scores opportunistically seek to correct the [adverse selection problems](https://cesardt97.github.io/Blog/posts/series-sc/intro-to-the-study-serie/09-05-2022_intro_study_serie.html) of these entities by summarizing a set of customer characteristics into a score. The central idea of these scales is to score customers according to a set of characteristics and to identify those attributes inherent in good and bad customers. @Bessis2015 defines credit ratings as assessments of the credit standing of borrowers and are excellent tools that best discriminate between defaulters and non-defaulters. The use of credit scores offers an objective way to assess risk, and it is also a consistent approach [@Siddiqi2006] that can be applied to a great number of potential customers in a relative simple procedure (thanks to the technological advances in recent years).
 
 On the other hand, clients seek to improve their scores by making various modifications to their financial behavior (paying debts in arrears, or improving their use of revolving credit, among others), so that companies will offer their services to them.
 
 Once selected, clients can negotiate additional services or lower prices, given their score level, i.e. clients of a commercial bank with a better credit score can receive preferential lending rates.
 
-|   Score   | Cumulative Number of Good Clients | Cumulative Number of Bad Clients |
-|:---------:|:---------------------------------:|:--------------------------------:|
-| 200 - 175 |                70                 |                10                |
-| 174 - 150 |                130                |                30                |
-| 149 - 125 |                180                |                60                |
-| 125 - 100 |                220                |               100                |
-|  99 - 75  |                250                |               150                |
-|  74 - 50  |                270                |               210                |
-|  49 - 0   |                280                |               280                |
+|   Score   | Number of Good Clients | Cumulative Number of Good Clients | Number of Bad Clients | Cumulative Number of Bad Clients |
+|:------------:|--------------|:-------------:|--------------|:-------------:|
+| 175 - 200 | 115                    |                115                | 10                    |                10                |
+| 150 - 174 | 105                    |                220                | 20                    |                30                |
+| 125 - 149 | 95                     |                315                | 30                    |                60                |
+| 100 - 124 | 85                     |                400                | 40                    |               100                |
+|  75 - 99  | 75                     |                475                | 50                    |               150                |
+|  50 - 74  | 65                     |                540                | 60                    |               210                |
+|  0 - 49   | 55                     |                595                | 70                    |               280                |
 
 : Credit Score {#tbl-sc}
 
 Author's elaboration
 
-@tbl-sc shows an example of a credit score and the cumulative number of good and bad clients. Using this information businesses may choose to serve only clients with credit scores above 125. This would mean that they will serve 240 clients, 180 will be good clients and 60 will be bad clients, which implies that, given the cut-off score, 25% of the clients may be bad clients. Low cut-off score will increase the potential clients, but will also increase the chance of getting bad clients.
+@tbl-sc shows an example of a credit score and the cumulative number of good and bad clients. Using this information businesses may choose to serve only clients with credit scores above 125. This would mean that they will serve 375 clients, 315 will be good clients and 60 will be bad clients, which implies that, given the cut-off score, 16% of the clients may be bad clients. Low cut-off score will increase the potential clients, but will also increase the chance of getting bad clients.
 
-This table also shows that for every score, there are good and also bad clients. As a business standard, businesses set a score range in which expert analysis is needed to make a decision.
+This table also shows that for every score, there are good and also bad clients. As a business standard, businesses set a score range in which expert analysis is needed to make a decision. Credit ratings, in sum, are a mix of qualitative and quantitative criteria used to assess the potential clients, but should also expert analysis at the end of the decision process.
 
 Credit scores help asses client creditworthiness, and also allows clients to access better pricing for services.
 

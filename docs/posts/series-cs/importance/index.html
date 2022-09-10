@@ -6,7 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Juan Quinonez">
+<meta name="author" content="César Díaz Tavera">
+<meta name="author" content="Juan Quiñonez Wu">
 <meta name="dcterms.date" content="2022-09-07">
 
 <title>Juan Quinonez - The Importance of a Credit Score</title>
@@ -17,6 +18,25 @@ span.underline{text-decoration: underline;}
 div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
@@ -119,9 +139,10 @@ ul.task-list{list-style: none;}
   <div class="quarto-title-meta">
 
       <div>
-      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-heading">Authors</div>
       <div class="quarto-title-meta-contents">
-               <p>Juan Quinonez </p>
+               <p>César Díaz Tavera </p>
+               <p>Juan Quiñonez Wu </p>
             </div>
     </div>
       
@@ -147,72 +168,108 @@ ul.task-list{list-style: none;}
 
 <p>Some businesses can choose who to offer their services to. Such is the case of commercial banks, insurance companies, real estate, among others. With increased competition in different sectors and marketing efforts to attract new customers, companies are faced with a pool of potential customers from which they must select profitable customers, with the highest probability of meeting their payments.</p>
 <p>However, companies do not always have complete information about customers, so they cannot perfectly discriminate between good customers and bad customers. This puts companies on the downside of adverse selection in this type of business.</p>
-<p>Credit scores opportunistically seek to correct the selection problems of these entities by summarizing a set of customer characteristics into a score. The central idea of these scales is to score customers according to a set of characteristics and to identify those attributes inherent in good and bad customers.</p>
+<p>Credit scores opportunistically seek to correct the <a href="https://cesardt97.github.io/Blog/posts/series-sc/intro-to-the-study-serie/09-05-2022_intro_study_serie.html">adverse selection problems</a> of these entities by summarizing a set of customer characteristics into a score. The central idea of these scales is to score customers according to a set of characteristics and to identify those attributes inherent in good and bad customers. <span class="citation" data-cites="Bessis2015">Bessis (<a href="#ref-Bessis2015" role="doc-biblioref">2015</a>)</span> defines credit ratings as assessments of the credit standing of borrowers and are excellent tools that best discriminate between defaulters and non-defaulters. The use of credit scores offers an objective way to assess risk, and it is also a consistent approach <span class="citation" data-cites="Siddiqi2006">(<a href="#ref-Siddiqi2006" role="doc-biblioref">Siddiqi 2006</a>)</span> that can be applied to a great number of potential customers in a relative simple procedure (thanks to the technological advances in recent years).</p>
 <p>On the other hand, clients seek to improve their scores by making various modifications to their financial behavior (paying debts in arrears, or improving their use of revolving credit, among others), so that companies will offer their services to them.</p>
 <p>Once selected, clients can negotiate additional services or lower prices, given their score level, i.e.&nbsp;clients of a commercial bank with a better credit score can receive preferential lending rates.</p>
 <div id="tbl-sc" class="anchored">
 <table class="table">
 <caption>Table 1: Credit Score</caption>
 <colgroup>
-<col style="width: 25%">
-<col style="width: 37%">
-<col style="width: 37%">
+<col style="width: 19%">
+<col style="width: 19%">
+<col style="width: 20%">
+<col style="width: 19%">
+<col style="width: 20%">
 </colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: center;">Score</th>
+<th>Number of Good Clients</th>
 <th style="text-align: center;">Cumulative Number of Good Clients</th>
+<th>Number of Bad Clients</th>
 <th style="text-align: center;">Cumulative Number of Bad Clients</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">200 - 175</td>
-<td style="text-align: center;">70</td>
+<td style="text-align: center;">175 - 200</td>
+<td>115</td>
+<td style="text-align: center;">115</td>
+<td>10</td>
 <td style="text-align: center;">10</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">174 - 150</td>
-<td style="text-align: center;">130</td>
+<td style="text-align: center;">150 - 174</td>
+<td>105</td>
+<td style="text-align: center;">220</td>
+<td>20</td>
 <td style="text-align: center;">30</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">149 - 125</td>
-<td style="text-align: center;">180</td>
+<td style="text-align: center;">125 - 149</td>
+<td>95</td>
+<td style="text-align: center;">315</td>
+<td>30</td>
 <td style="text-align: center;">60</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">125 - 100</td>
-<td style="text-align: center;">220</td>
+<td style="text-align: center;">100 - 124</td>
+<td>85</td>
+<td style="text-align: center;">400</td>
+<td>40</td>
 <td style="text-align: center;">100</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">99 - 75</td>
-<td style="text-align: center;">250</td>
+<td style="text-align: center;">75 - 99</td>
+<td>75</td>
+<td style="text-align: center;">475</td>
+<td>50</td>
 <td style="text-align: center;">150</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">74 - 50</td>
-<td style="text-align: center;">270</td>
+<td style="text-align: center;">50 - 74</td>
+<td>65</td>
+<td style="text-align: center;">540</td>
+<td>60</td>
 <td style="text-align: center;">210</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">49 - 0</td>
-<td style="text-align: center;">280</td>
+<td style="text-align: center;">0 - 49</td>
+<td>55</td>
+<td style="text-align: center;">595</td>
+<td>70</td>
 <td style="text-align: center;">280</td>
 </tr>
 </tbody>
 </table>
 </div>
 <p>Author’s elaboration</p>
-<p><a href="#tbl-sc">Table&nbsp;1</a> shows an example of a credit score and the cumulative number of good and bad clients. Using this information businesses may choose to serve only clients with credit scores above 125. This would mean that they will serve 240 clients, 180 will be good clients and 60 will be bad clients, which implies that, given the cut-off score, 25% of the clients may be bad clients. Low cut-off score will increase the potential clients, but will also increase the chance of getting bad clients.</p>
-<p>This table also shows that for every score, there are good and also bad clients. As a business standard, businesses set a score range in which expert analysis is needed to make a decision.</p>
+<p><a href="#tbl-sc">Table&nbsp;1</a> shows an example of a credit score and the cumulative number of good and bad clients. Using this information businesses may choose to serve only clients with credit scores above 125. This would mean that they will serve 375 clients, 315 will be good clients and 60 will be bad clients, which implies that, given the cut-off score, 16% of the clients may be bad clients. Low cut-off score will increase the potential clients, but will also increase the chance of getting bad clients.</p>
+<p>This table also shows that for every score, there are good and also bad clients. As a business standard, businesses set a score range in which expert analysis is needed to make a decision. Credit ratings, in sum, are a mix of qualitative and quantitative criteria used to assess the potential clients, but should also expert analysis at the end of the decision process.</p>
 <p>Credit scores help asses client creditworthiness, and also allows clients to access better pricing for services.</p>
 <p>How are credit scores calibrated? Which characteristics influence in this scale? These, and more questions are soon to be answered in latter posts.</p>
 
 
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Bessis2015" class="csl-entry" role="doc-biblioentry">
+Bessis, Joël. 2015. <span>“Risk Management in Banking.”</span>
+</div>
+<div id="ref-Siddiqi2006" class="csl-entry" role="doc-biblioentry">
+Siddiqi, Nadim. 2006. <span>“Credit Risk Scorecards: Developing and Implementing Intelligent Credit Scoring.”</span>
+</div>
+</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{díaztavera2022,
+  author = {César Díaz Tavera and Juan Quiñonez Wu},
+  title = {The {Importance} of a {Credit} {Score}},
+  date = {2022-09-07},
+  url = {https://cesardt97.github.io/Blog/posts/series-sc/intro-to-the-study-serie/09-05-2022_intro_study_serie.html},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-díaztavera2022" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
+César Díaz Tavera, and Juan Quiñonez Wu. 2022. <span>“The Importance of
+a Credit Score.”</span> September 7, 2022. <a href="https://cesardt97.github.io/Blog/posts/series-sc/intro-to-the-study-serie/09-05-2022_intro_study_serie.html">https://cesardt97.github.io/Blog/posts/series-sc/intro-to-the-study-serie/09-05-2022_intro_study_serie.html</a>.
+</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
