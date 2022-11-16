@@ -1,6 +1,6 @@
 ---
 title: "About"
-image: profile.jpg
+image: DSCF4783.jpg
 about:
   template: trestles
   links:

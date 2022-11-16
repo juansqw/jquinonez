@@ -1,0 +1,45 @@
+---
+title: "Classification models"
+author: 
+  - name: César Díaz Tavera
+    email: cesartavera97@gmail.com
+  - name: Juan Quiñonez Wu
+    email: juansqw@gmail.com
+date: "2022-09-24"
+bibliography: bibliografia.bib
+categories: [credit score, banking, money, classification models]
+draft: true
+citation:
+  url: https://juansqw.github.io/jquinonez/posts/series-cs/importance/
+params:
+  slug: key-concepts-credit-score
+  date: 2022-09-07
+---
+
+Identifying good clients may not be an easy task if we consider
+
+-   Regression vs Classification
+
+    -   Regression
+
+        -   Regression algorithms predict a continuous value based on the input variables.
+
+        -   Often used to study relationships between the dependent variable and different independent variables. These type of models can also be used for forecast (or backcast).
+
+    -   Classification
+
+        -   Classification is a predictive model that approximates a mapping function from input variables to identify discrete output variables, which can be labels or categories.
+
+        -   used to study relationships between the dependent variable and different independent variables
+
+-   Types of classification models
+
+-   Class vs probability
+
+-   Evaluating models
+
+    -   Confusion matrix
+
+    -   Sensitivity and Specificity
+
+    -   ROC

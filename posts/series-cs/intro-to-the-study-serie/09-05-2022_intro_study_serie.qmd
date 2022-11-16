@@ -1,0 +1,76 @@
+---
+title: "Introduction to the study serie: key concepts to understand credit scoring"
+description: |
+    The aim is to explain basic economic concepts in order to understand more fluently why a credit score is important.
+author: 
+  - name: César Díaz Tavera
+    email: cesartavera97@gmail.com
+  - name: Juan Quiñonez Wu
+    email: jquinonez@gmail.com
+date: "2022-09-05"
+categories: [Credit Score, Economics, Information Asymmetry, Banking]
+image: "sc.png"
+bibliography: ref.bib
+citation:
+  url: https://cesardt97.github.io/Blog/posts/series-sc/intro-to-the-study-serie/09-05-2022_intro_study_serie.html
+params:
+  slug: key-concepts-credit-score
+  date: 2022-09-05
+---
+
+## **Introduction**
+
+The sustainable and healthy development of a country's financial system and banking sector is of utmost importance for economic growth. As banks are the main source of credit, they provide economic agents with funds to consume and invest, adding dynamism to the economic activity. However, the banking sector is full of risks. That is why risk management is an area of extreme importance and has remained a topic of major interest since the financial crisis of 2007-2008. Today, risk management is one of the central functions of financial institutions.
+
+Because of its importance, [Cesar Díaz](https://cesardt97.github.io/Blog/about.html) and [I](https://juansqw.github.io/jquinonez/about.html) have decided to carry out a brief series of studies where we consider a type of risk and, specifically, one of the ways in which it can be mitigated. We refer to credit risk and credit scores, respectively. This study series on credit score in banking will cover the following:
+
+-   **Introduction to the study series: key concepts to understand credit scoring**
+-   [The Importance of a Credit Score](../importance/index.qmd)
+-   Methodologies for Credit Score development
+    -   Logit model
+        -   Out of sample evaluation
+        -   Kolmogorov - Smirnov test
+    -   Machine learning models
+    -   Logit benchmark vs ML models
+
+The goal of the study series is to better understand what a credit score is, why it is important, and how it is constructed. Explicitly, after briefly laying out a theoretical background on its importance, we aim to delved into the statistical techniques that are appropriate to construct a good credit score system. This article is the first in the series of studies and reviews the key economic concepts involved in the underlying problem that score credits try to mitigate.
+
+## **Definition of key concepts**
+
+*Information asymmetry cause the healthy functioning of markets to disappear.*
+
+Information is the basis of decision making. Whenever we want to do a transaction of any kind[^1] we try to collect as much information as possible in order to gain bargain power, or simply to be sure that the transaction is beneficial. Information asymmetry refers to a situation of imbalance in which, in a transaction of any kind, one of the interested parties has more or better information than the other, which creates inefficiency and even market failures in some cases. Popular examples of information asymmetry are moral hazard and adverse selection.
+
+[^1]: i.e. a contractual arrangement, buy a car, or investment decisions.
+
+On the other hand, adverse selection is a pre-contractual problem that leads to bad decision[^2]. Since @akerlof1978market seminal article 'the market for lemons'[^3], where he explains the concept and its implications in market dynamics, adverse selection has come to be seen as a fundamental cause of market failure. Housing, insurance, credit markets and others suffer constantly from this problem. Put simply, adverse selection is the problem of correctly distinguish between a good and a bad *product*[^4] when there is information asymmetry in an economic transaction. This problem arises because sometimes it is very costly/difficult to be fully informed about the quality or features of a *product*. In markets where this problem is consistent, the overall quality of the *products* at sell in the market significantly declines[^5]. In the banking industry, adverse selection is common as an issue concerning the provision of credit, since the intermediary can't know for sure who has a high probability of default.
+
+[^2]: Such as doing more business with less-profitable or riskier business [@hayes_2022].
+
+[^3]: In this paper, Akerlof exemplify adverse selection with an analogy concerning the market of used cars: in the market there are good and bad cards (Akerlof refer to those as lemons). The problem comes because when buying a car, the owner and seller of the car clearly knows the conditions of his property, while the buyer ignore its characteristics. If the buyer where to know that the car he's buying is good, he would pay the right price for it. However, Akerlof suggests that this is not possible to know for sure. Therefore, since the buyer must take into account the probability that the car he buys may be good or bad, he will lower the price he is willing to pay for a used car so that it is close to the average market price (it should be noted that the seller of the lemon would be happy with any price greater than or equal to its market value, which in this case is the lower limit). However, the sellers of the good cars will be unwilling to sell for a lower price, forcing them out of the market. On aggregate, the average quality of vehicles on the market would drop with the exit of the best sellers, again lowering the buyer's price and again driving the average quality cars out of the market. Thus, creating a major market failure where the only buying options are 'lemons'.
+
+[^4]: We refer to product as the counterparty in a transaction, or the merchandise they are selling.
+
+[^5]: Hence, the selection from the pool of products becomes adverse
+
+Moral hazard is a post-contractual information asymmetry problem that occurs when one of the parties to a contract takes actions that represent additional risk (and thus are detrimental) to the other party, within the framework of what had been agreed. For example, if a borrower takes out a loan with the idea of starting a retail business with which he would pay the installment, but uses the money to travel, his probability of default increases, hence increasing in the lender's credit risk.
+
+Thus, these problems of information asymmetry permeate the financial markets with risk. Risk can be defined as the negative consequences[^6] that arise due to uncertainty. In other words, risk can be seen as the potential loss resulting from the interaction with uncertainty, an interaction that occurs according to the degree of exposure[^7] to chance. Uncertainty cannot be changed, but the degree of exposure to it can @bessis2011risk.
+
+[^6]: In the case of finance on profits or equity.
+
+[^7]: Exposure refers to how vulnerable a business is to being negatively affected by certain factors.
+
+Among the risks that exist in banking, it is up to us to discuss credit risk. Credit risk is the expected loss resulting from a borrower's incapability to meet its obligation. So, it refers to the amount lost when a borrower fails to make a payment, which includes a principal, interest and collection costs. Credit risk can be understood as the multiplication of its components:
+
+$$
+Credit\ risk=(default\ probability)*(exposure\ at\ default)*(loss\ rate\ given\ default)
+$$ Where default probability is the likelihood of borrowers' no being able to comply with their obligations. Exposure is the amount to be lost if the borrower where to default. Loss rate given default is the percentage of amount lost after collection efforts.
+
+Let's analyze this with an example: Let's say the borrower wants to buy a car for \$100,000 and the bank will fund 90% of the purchase, so the loan amount is equal to \$90,000. Up to this day, the borrower has repaid \$10,000, so the outstanding balance is \$80,000. If the borrower defaults, the exposure at default would be \$80,000. Let's suppose there is evidence that the probability of default is 30%. If the borrower defaults, the bank can sell the car immediately for \$70,000. Then, the remaining loss would be \$10,000 and the loss given default would be $\$10,000/\$90,000 = 11.11%$. So if the bank where to calculate its expected loss at this very moment, it would be $30\% * 11.11\% * \$90,000 = \$3,000$.
+
+Finally, I would like you to take away the idea of why effective supervision is important for the banking sector. @inbook : *The main purpose of surveillance and supervision is to ensure that banks retain sufficient capital against the risks they bear and to ensure that they operate in an environment where reliable conditions are created. Effective surveillance and supervision in banking plays a critical role in ensuring stability in the financial system of every country. It provides the benefits in free market conditions and in the implementation of effective macroeconomic policies.*
+
+In the next article in this series of studies we will delve into how these concepts are interrelated, their implications for the banking industry, and why a good credit scoring system is important for financial institutions.
+
+## **References**

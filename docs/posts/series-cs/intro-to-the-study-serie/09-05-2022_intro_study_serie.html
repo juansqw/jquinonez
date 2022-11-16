@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="César Díaz Tavera">
+<meta name="author" content="Juan Quiñonez Wu">
+<meta name="dcterms.date" content="2022-09-05">
+<meta name="description" content="The aim is to explain basic economic concepts in order to understand more fluently why a credit score is important.">
+
+<title>Juan Quinonez - Introduction to the study serie: key concepts to understand credit scoring</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Juan Quinonez</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../about.html">About</a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-series" role="button" data-bs-toggle="dropdown" aria-expanded="false">Series</a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-series">    
+        <li>
+    <a class="dropdown-item" href="../../../series-cs.html">
+ <span class="dropdown-text">Credit Score</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/juansqw"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/juan-quinonez"><i class="bi bi-linkedin" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Introduction to the study serie: key concepts to understand credit scoring</h1>
+                  <div>
+        <div class="description">
+          <p>The aim is to explain basic economic concepts in order to understand more fluently why a credit score is important.</p>
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">Credit Score</div>
+                <div class="quarto-category">Economics</div>
+                <div class="quarto-category">Information Asymmetry</div>
+                <div class="quarto-category">Banking</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Authors</div>
+      <div class="quarto-title-meta-contents">
+               <p>César Díaz Tavera </p>
+               <p>Juan Quiñonez Wu </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">September 5, 2022</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><strong>Introduction</strong></a></li>
+  <li><a href="#definition-of-key-concepts" id="toc-definition-of-key-concepts" class="nav-link" data-scroll-target="#definition-of-key-concepts"><strong>Definition of key concepts</strong></a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><strong>References</strong></a></li>
+  </ul>
+</nav>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction"><strong>Introduction</strong></h2>
+<p>The sustainable and healthy development of a country’s financial system and banking sector is of utmost importance for economic growth. As banks are the main source of credit, they provide economic agents with funds to consume and invest, adding dynamism to the economic activity. However, the banking sector is full of risks. That is why risk management is an area of extreme importance and has remained a topic of major interest since the financial crisis of 2007-2008. Today, risk management is one of the central functions of financial institutions.</p>
+<p>Because of its importance, <a href="https://cesardt97.github.io/Blog/about.html">Cesar Díaz</a> and <a href="https://juansqw.github.io/jquinonez/about.html">I</a> have decided to carry out a brief series of studies where we consider a type of risk and, specifically, one of the ways in which it can be mitigated. We refer to credit risk and credit scores, respectively. This study series on credit score in banking will cover the following:</p>
+<ul>
+<li><strong>Introduction to the study series: key concepts to understand credit scoring</strong></li>
+<li><a href="../../../posts/series-cs/importance/index.html">The Importance of a Credit Score</a></li>
+<li>Methodologies for Credit Score development
+<ul>
+<li>Logit model
+<ul>
+<li>Out of sample evaluation</li>
+<li>Kolmogorov - Smirnov test</li>
+</ul></li>
+<li>Machine learning models</li>
+<li>Logit benchmark vs ML models</li>
+</ul></li>
+</ul>
+<p>The goal of the study series is to better understand what a credit score is, why it is important, and how it is constructed. Explicitly, after briefly laying out a theoretical background on its importance, we aim to delved into the statistical techniques that are appropriate to construct a good credit score system. This article is the first in the series of studies and reviews the key economic concepts involved in the underlying problem that score credits try to mitigate.</p>
+</section>
+<section id="definition-of-key-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="definition-of-key-concepts"><strong>Definition of key concepts</strong></h2>
+<p><em>Information asymmetry cause the healthy functioning of markets to disappear.</em></p>
+<p>Information is the basis of decision making. Whenever we want to do a transaction of any kind<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> we try to collect as much information as possible in order to gain bargain power, or simply to be sure that the transaction is beneficial. Information asymmetry refers to a situation of imbalance in which, in a transaction of any kind, one of the interested parties has more or better information than the other, which creates inefficiency and even market failures in some cases. Popular examples of information asymmetry are moral hazard and adverse selection.</p>
+<p>On the other hand, adverse selection is a pre-contractual problem that leads to bad decision<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. Since <span class="citation" data-cites="akerlof1978market">Akerlof (<a href="#ref-akerlof1978market" role="doc-biblioref">1978</a>)</span> seminal article ‘the market for lemons’<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>, where he explains the concept and its implications in market dynamics, adverse selection has come to be seen as a fundamental cause of market failure. Housing, insurance, credit markets and others suffer constantly from this problem. Put simply, adverse selection is the problem of correctly distinguish between a good and a bad <em>product</em><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> when there is information asymmetry in an economic transaction. This problem arises because sometimes it is very costly/difficult to be fully informed about the quality or features of a <em>product</em>. In markets where this problem is consistent, the overall quality of the <em>products</em> at sell in the market significantly declines<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>. In the banking industry, adverse selection is common as an issue concerning the provision of credit, since the intermediary can’t know for sure who has a high probability of default.</p>
+<p>Moral hazard is a post-contractual information asymmetry problem that occurs when one of the parties to a contract takes actions that represent additional risk (and thus are detrimental) to the other party, within the framework of what had been agreed. For example, if a borrower takes out a loan with the idea of starting a retail business with which he would pay the installment, but uses the money to travel, his probability of default increases, hence increasing in the lender’s credit risk.</p>
+<p>Thus, these problems of information asymmetry permeate the financial markets with risk. Risk can be defined as the negative consequences<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> that arise due to uncertainty. In other words, risk can be seen as the potential loss resulting from the interaction with uncertainty, an interaction that occurs according to the degree of exposure<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> to chance. Uncertainty cannot be changed, but the degree of exposure to it can <span class="citation" data-cites="bessis2011risk">Bessis (<a href="#ref-bessis2011risk" role="doc-biblioref">2011</a>)</span>.</p>
+<p>Among the risks that exist in banking, it is up to us to discuss credit risk. Credit risk is the expected loss resulting from a borrower’s incapability to meet its obligation. So, it refers to the amount lost when a borrower fails to make a payment, which includes a principal, interest and collection costs. Credit risk can be understood as the multiplication of its components:</p>
+<p><span class="math display">\[
+Credit\ risk=(default\ probability)*(exposure\ at\ default)*(loss\ rate\ given\ default)
+\]</span> Where default probability is the likelihood of borrowers’ no being able to comply with their obligations. Exposure is the amount to be lost if the borrower where to default. Loss rate given default is the percentage of amount lost after collection efforts.</p>
+<p>Let’s analyze this with an example: Let’s say the borrower wants to buy a car for $100,000 and the bank will fund 90% of the purchase, so the loan amount is equal to $90,000. Up to this day, the borrower has repaid $10,000, so the outstanding balance is $80,000. If the borrower defaults, the exposure at default would be $80,000. Let’s suppose there is evidence that the probability of default is 30%. If the borrower defaults, the bank can sell the car immediately for $70,000. Then, the remaining loss would be $10,000 and the loss given default would be <span class="math inline">\(\$10,000/\$90,000 = 11.11%\)</span>. So if the bank where to calculate its expected loss at this very moment, it would be <span class="math inline">\(30\% * 11.11\% * \$90,000 = \$3,000\)</span>.</p>
+<p>Finally, I would like you to take away the idea of why effective supervision is important for the banking sector. <span class="citation" data-cites="inbook">Gündüz (<a href="#ref-inbook" role="doc-biblioref">2020</a>)</span> : <em>The main purpose of surveillance and supervision is to ensure that banks retain sufficient capital against the risks they bear and to ensure that they operate in an environment where reliable conditions are created. Effective surveillance and supervision in banking plays a critical role in ensuring stability in the financial system of every country. It provides the benefits in free market conditions and in the implementation of effective macroeconomic policies.</em></p>
+<p>In the next article in this series of studies we will delve into how these concepts are interrelated, their implications for the banking industry, and why a good credit scoring system is important for financial institutions.</p>
+</section>
+<section id="references" class="level2">
+
+
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-akerlof1978market" class="csl-entry" role="doc-biblioentry">
+Akerlof, George A. 1978. <span>“The Market for <span>‘Lemons’</span>: Quality Uncertainty and the Market Mechanism.”</span> In <em>Uncertainty in Economics</em>, 235–51. Elsevier.
+</div>
+<div id="ref-bessis2011risk" class="csl-entry" role="doc-biblioentry">
+Bessis, Joel. 2011. <em>Risk Management in Banking</em>. John Wiley &amp; Sons.
+</div>
+<div id="ref-inbook" class="csl-entry" role="doc-biblioentry">
+Gündüz, Veclal. 2020. <span>“Risk Management in Banking Sector.”</span> In, 121–35.
+</div>
+<div id="ref-hayes_2022" class="csl-entry" role="doc-biblioentry">
+Hayes, Adam. 2022. <span>“Adverse Selection.”</span> Investopedia. <a href="https://www.investopedia.com/terms/a/adverseselection.asp">https://www.investopedia.com/terms/a/adverseselection.asp</a>.
+</div>
+</div></section><section class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1" role="doc-endnote"><p>i.e.&nbsp;a contractual arrangement, buy a car, or investment decisions.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>Such as doing more business with less-profitable or riskier business <span class="citation" data-cites="hayes_2022">(<a href="#ref-hayes_2022" role="doc-biblioref">Hayes 2022</a>)</span>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3" role="doc-endnote"><p>In this paper, Akerlof exemplify adverse selection with an analogy concerning the market of used cars: in the market there are good and bad cards (Akerlof refer to those as lemons). The problem comes because when buying a car, the owner and seller of the car clearly knows the conditions of his property, while the buyer ignore its characteristics. If the buyer where to know that the car he’s buying is good, he would pay the right price for it. However, Akerlof suggests that this is not possible to know for sure. Therefore, since the buyer must take into account the probability that the car he buys may be good or bad, he will lower the price he is willing to pay for a used car so that it is close to the average market price (it should be noted that the seller of the lemon would be happy with any price greater than or equal to its market value, which in this case is the lower limit). However, the sellers of the good cars will be unwilling to sell for a lower price, forcing them out of the market. On aggregate, the average quality of vehicles on the market would drop with the exit of the best sellers, again lowering the buyer’s price and again driving the average quality cars out of the market. Thus, creating a major market failure where the only buying options are ‘lemons’.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4" role="doc-endnote"><p>We refer to product as the counterparty in a transaction, or the merchandise they are selling.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5" role="doc-endnote"><p>Hence, the selection from the pool of products becomes adverse<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6" role="doc-endnote"><p>In the case of finance on profits or equity.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7" role="doc-endnote"><p>Exposure refers to how vulnerable a business is to being negatively affected by certain factors.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{díaztavera2022,
+  author = {César Díaz Tavera and Juan Quiñonez Wu},
+  title = {Introduction to the Study Serie: Key Concepts to Understand
+    Credit Scoring},
+  date = {2022-09-05},
+  url = {https://cesardt97.github.io/Blog/posts/series-sc/intro-to-the-study-serie/09-05-2022_intro_study_serie.html},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-díaztavera2022" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
+César Díaz Tavera, and Juan Quiñonez Wu. 2022. <span>“Introduction to
+the Study Serie: Key Concepts to Understand Credit Scoring.”</span>
+September 5, 2022. <a href="https://cesardt97.github.io/Blog/posts/series-sc/intro-to-the-study-serie/09-05-2022_intro_study_serie.html">https://cesardt97.github.io/Blog/posts/series-sc/intro-to-the-study-serie/09-05-2022_intro_study_serie.html</a>.
+</div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
