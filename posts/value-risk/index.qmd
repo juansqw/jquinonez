@@ -1,0 +1,265 @@
+---
+title: "Valor en Riesgo de un activo financiero"
+subtitle: 'Primer acercamiento'
+author: "Juan Quinonez"
+date: "2022-11-28"
+bibliography: bibliografia.bib
+categories: [var, value at risk, finance]
+draft: false
+editor: visual
+---
+
+Recientemente he estado revisando la literatura relacionada con el valor en riesgo y encontré una [lista de reproducción de Miguel Angel Rojas](https://youtube.com/playlist?list=PLt57MICFY-gTJJvG-Fm71V0j_LP-I-tDR) donde cubre una muy buena introducción tanto teórica como práctica. En la misma se utiliza el precio de las acciones ADP Banco Colombia como caso de estudio.
+
+## Introducción
+
+Una de las herramientas para el manejo de portafolios de inversión es el "valor en riesgo" (VaR, por sus siglas en inglés). En palabras de Novales [-@Novales2016] esta métrica se utiliza para evaluar el riesgo de una cartera y responde la pregunta: "cuál es la caída en el valor del activo que será sobrepasado sólo con una probabilidad de p% en los próximos *n* días?". Esta métrica indica la pérdida que se puede sufrir en condiciones normales de mercado en un intervalo de tiempo determinado (usualmente 1 día, 1 semana, o 1 mes) y con un cierto nivel de probabilidad (generalmente de 1% - 5%). Esta media se ha convertido en el estandar de medición de riesgo, recomendada por el Comité de Basilea [@Basel2006].
+
+De acuerdo con Stevens [-@Stevens2021], Este valor es muy importante para: 
+
+-   Fijar los límites operativos en las actividades de inversión en los mercados; esto en función del riesgo asumible.
+
+-   Medir el riesgo combinado con el conjunto de posiciones mantenidas en cartera.
+
+-   Calcular las medidas de rentabilidad relativa para el mantenimiento de carteras óptimas.
+
+-   Estimar los recursos propios necesarios para hacer frente a los riesgos del mercado.
+
+Rojas [-@Rojas2018] destaca algunas ventajas de esta métrica:
+
+-   Es sencillo de calcular;
+
+-   Permite agregar todo el riesgo de una inversión en un sólo resultado (un valor);
+
+-   Es una métrica estándar, lo que permite su comparación entre portafolios;
+
+-   Resume el riesgo de mercado en un sólo valor.
+
+Este mismo autor también resalta algunas desventajas de la misma:
+
+-   Diferentes técnicas de estimación pueden llevar resultados distintos;
+
+-   No se toma en cuenta la liquidez de los mercados ni el tamaño de la posición.
+
+Un documento con más detalles sobre este tema se recomienda Ballota [-@ballota2017] y Nieppola [-@nieppola2009].
+
+## Metodologías
+
+Existen diferentes metodologías de desarrollo y en esta entrada cubriremos algunas de ellas y luego realizaremos un ejercicio de comparación aplicando un *backtest* sobre cada una y analizaremos su rendimiento.
+
+Se estará trabajando sobre los retornos de un activo de renta variable definidos como:
+
+$$
+returns = \ln{\frac{P_t}{P_{t-1}}}
+$$
+
+### VaR Paramétrico
+
+Esta técnica de estimación del VaR utiliza los momentos de la serie de retornos del activo como insumos. Rojas [-@Rojas2018] define el VaR como:
+
+$$
+VaR_t = \sigma_t * Z *\sqrt{n}
+$$ {#eq-rojas}
+
+donde $\sigma_t$ corresponde a la desviación estándar del periodo seleccionado; $Z$ es el número de desviaciones estándar para el nivel de significancia dado; $n$ es el tiempo dado en días.
+
+De manera similar, Novales [-@Novales2016] define la siguiente técnica:
+
+$$
+VaR_t = Z*\sigma_t - \mu_t
+$$ {#eq-novales}
+
+donde $\mu_t$ es el promedio de los retornos del periodo seleccionado.
+
+### VaR Histórico
+
+El VaR histórico se obtiene utilizando el valor de los rendimientos que corresponden al percentíl que corresponde al nivel de significancia seleccionado.
+
+### VaR con volatilidad dinámica (EWMA)
+
+Hasta ahora, las técnicas anteriormente presentadas ponderan de la misma manera las observaciones en el tiempo. La técnica de EWMA (exponential weighted moving average) da una mayor importancia a las realizaciones más recientes, lo que permite tener una medida de volatilidad dinámica.
+
+$$
+\sigma_t^2 = \sum{(1-\lambda)*\lambda^{i-1}*returns^2}
+$$
+
+donde $\lambda$ es el factor de decaimiento, típicamente es igual a 0.94 para series diarias; $i$ es la posición de la realización, en la serie histórica. Esta medida de volatilidad es un caso especial de un modelo GARCH y su expliación ha sido cubierta en [un post anterior](../visa_garch/index.qmd)
+
+Esta medida de volatilidad es luego utilizada en la [Ecuación @eq-rojas] para estimar el VaR.
+
+### Backtesting
+
+Cada técnica es utilizada para calcular el valor en riesgo utilizando una ventana móvil de 255 días (el equivalente a un año laboral). Esto permite realizar estimaciones de manera recursiva, actualizando un día a la vez.
+
+Cada técnica provee un valor en riesgo diferente. Para su comparación y como medida de rendimiento se identifican los momentos en que las realizaciones de los retornos fueron superiores al VaR para cada estimación. Esta cantidad es luego constrastada con las pruebas de Kupiec, la cual determina si la cantidad de excesos es estadísticamente significativa. En la práctica para un nivel de significancia de 1%, se espera que la cantidad de realizaciones no superen los 7 excesos de VaR.
+
+## Datos
+
+Para el desarrollo de este ejercicio se utiliza información del precio de cierre diario de Visa para el período comprendido entre el 24 de noviembre del 2017 y el 23 de noviembre del 2022 y se utiliza un nivel de significancia de 1%. La evolución de los retornos se muestra en la [Gráfica @fig-retornos].
+
+```{r}
+#| fig-cap: 'Retornos diarios. Fuente: Yahoo Finance.'
+#| label: fig-retornos
+#| warnings: false
+
+# Visa
+V <- quantmod::getSymbols('V',
+                     from = '2017-11-24',
+                     to = '2022-11-23',
+                     auto.assign = FALSE)
+V$returns <- PerformanceAnalytics::CalculateReturns(V$V.Close,
+                                                    method = 'log')
+V_df <- V |> 
+  as.data.frame() |> 
+  tibble::rownames_to_column(var = 'date') |> 
+  dplyr::mutate(yr = lubridate::year(date))
+
+# Graph
+V_df |> 
+  echarts4r::e_charts(date) |>
+  echarts4r::e_line(returns) |> 
+  echarts4r::e_datazoom(type = 'slider') |> 
+  echarts4r::e_legend(show = FALSE) |> 
+  echarts4r::e_title("Retornos Diarios", "Visa")
+  
+```
+
+Con relación al comportamiento de esta serie de retornos se puede destacar un considerable aumento en la volatilidad de esta serie de retornos en el 2020, producto de la incertidumbre global provocada por el COVID-19.
+
+```{r}
+#| label: tbl-returns
+#| tbl-cap: 'Resumen estadísitico de los retornos diarios de Visa. Fuente: Yahoo Finance'
+#| tbl-cap-location: bottom
+
+# Summary table
+V_df |> 
+  dplyr::select(yr, returns) |> 
+  gtsummary::tbl_summary(by = yr,
+                         statistic = list(gtsummary::all_continuous() ~ "{mean} ({sd})"),
+                         digits = gtsummary::all_continuous() ~ 4,
+                         missing = "no",
+                         percent = 'cell')
+
+```
+
+## Resultados
+
+Los resultados de las diferentes técnicas se muestran en la [Gráfica @fig-vars].
+
+```{r}
+#| fig-cap: 'Valor en Riesgo utilizando diferentes tecnicas.'
+#| label: fig-vars
+#| warnings: false
+
+
+# ---- Parameters ----
+alpha <- 0.01
+n <- 1
+window <- 255
+
+# ---- Functions ----
+# rojas_var
+rojas_var <- function(x, alpha, n){
+  var <- sd(x)*qnorm(alpha)*sqrt(n)
+  
+  return(var)
+}
+
+# novales_var
+novales_var <- function(x, alpha){
+  var <- sd(x)*qnorm(alpha)-mean(x)
+  
+  return(var)
+}
+
+# ---- Data ----
+rojas <- PerformanceAnalytics::apply.rolling(V$returns,
+                                            alpha = alpha,
+                                            n = n,
+                                            width = window,
+                                            FUN = rojas_var)
+
+novales <- PerformanceAnalytics::apply.rolling(V$returns,
+                                            alpha = alpha,
+                                            width = window,
+                                            FUN = novales_var)
+
+historico <- PerformanceAnalytics::apply.rolling(V$returns,
+                                            probs = alpha,
+                                            width = window,
+                                            FUN = stats::quantile)
+
+# EWMA
+# Specs
+ewma.spec <- rugarch::ugarchspec(mean.model=list(armaOrder=c(1,1),
+                                                 include.mean=FALSE),
+                                 variance.model=list(model="iGARCH"),
+                                 fixed.pars=list(alpha1=1-0.94,
+                                                 omega=0))
+# Fit
+ewma.fit <- rugarch::ugarchfit(spec = ewma.spec,
+                      data = na.omit(V$returns))
+ewma_var <- rugarch::sigma(ewma.fit)*qnorm(alpha)*sqrt(n)
+
+var_df <- xts::merge.xts(V, rojas, novales, historico, ewma_var) |> 
+  as.data.frame() |> 
+  tibble::rownames_to_column(var = 'date')
+
+# Graph
+var_df |> 
+  echarts4r::e_charts(date) |>
+  echarts4r::e_line(returns) |> 
+  echarts4r::e_line(calcs, name = 'Rojas') |>
+  echarts4r::e_line(calcs.1, name = 'Novales') |>
+  echarts4r::e_line(calcs.2, name = 'Histórico') |>
+  echarts4r::e_line(ewma_var, name = 'EWMA') |>
+  echarts4r::e_datazoom(type = 'slider') |> 
+  echarts4r::e_legend(show = TRUE) |> 
+  echarts4r::e_title("Retornos Diarios", "Comparación de técnicas de estimación de VaR")
+```
+
+En el gráfico anterior se puede ver que las medidas paramétricas propuetas por Rojas [-@Rojas2018] y Novales [-@Novales2016] tienen magnitudes similares. Los resultados calculados con el método histórico tienen un comportamiento más estable que el resto de las técnicas y, por el contrario, el método de estimación de EWMA recoge una mayor parte de la volatilidad de la serie, realizando cambios en la magnitud VaR con mayor frecuencia.
+
+## Backtesting
+
+Este proceso de prueba compara las ganancias y pérdidas realizadas con los pronósticos del VaR [@halveh2016]. Una de la pruebas más comunes es la de Kupiec [@kupiec1995], cuya hipótesis nula es que la tasa de fracaso (los casos en que la métrica del VaR fallaron en predecir) se encuentra en un intervalo de confianza relacionado con el nivel de significancia escogido.
+
+```{r}
+#| label: tbl-backtesting
+#| tbl-cap: 'Prueba de Kupiec (POF)'
+#| tbl-cap-location: bottom
+
+# Este chunk puede mejorar.
+# DONT REPEAT YOURSELF.
+
+# Data
+data_bt <- var_df |> 
+  na.omit()
+
+kupiec_Rojas <- GAS::BacktestVaR(data_bt$returns,data_bt$calcs,alpha = alpha)
+kupiec_Novales <- GAS::BacktestVaR(data_bt$returns,data_bt$calcs.1,alpha = alpha)
+kupiec_historico <- GAS::BacktestVaR(data_bt$returns,data_bt$calcs.2,alpha = alpha)
+kupiec_EWMA <- GAS::BacktestVaR(data_bt$returns,data_bt$ewma_var,alpha = alpha)
+
+kp_df <- data.frame(technique = c('Rojas', 'Novales', 'Histórico', 'EWMA'),
+                    chi2 = c(kupiec_Rojas$LRuc[1], kupiec_Novales$LRuc[1], kupiec_historico$LRuc[1], kupiec_EWMA$LRuc[1]),
+                    p_value = c(kupiec_Rojas$LRuc[2], kupiec_Novales$LRuc[2], kupiec_historico$LRuc[2], kupiec_EWMA$LRuc[2]))
+
+# Table
+gt::gt(kp_df) |> 
+  gt::tab_header(title = 'Resultados de prueba de Kupiec POF') |> 
+  gt::cols_label(technique = 'Técnica',
+                 chi2 = 'Chi Cuadrado',
+                 p_value = 'P-Value') |> 
+  gt::fmt_number(c(chi2, p_value), decimals = 4)
+
+
+```
+
+Los resultados de la prueba de Kupiec se muestran en la [Tabla @tbl-backtesting]. En la misma se observa que el p-value para todas las técnicas (salvo la técnica Histórico) es menor que el nivel de significancia (1%) se rechaza la hipótesis nula, por lo que se concluye que las técnicas no capturan correctamente la volatilidad del activo en cuestión. Esto indica que los excesos de volatilidad realizados fueron superiores a la volatildiad estimada por las diferentes técnicas en "muchas" ocasiones. Con esto se conluye que las metodologías seleccionadas deben ser revisadas y/o ajustadas.
+
+Para más detalles sobre las pruebas de precisión de los models de Valor en Riesgo se recomienda la lectura de Campbell [-@Campbell2005], Nieppola [-@nieppola2009] y Zhang & Nadarajh [-@zhang2017].
+
+## Conclusión
+
+Esta entrada sirve como práctica personal para recopilar los elementos principales del valor en riesgo. Más adelante se explorará la aplicación de esta técnica a un portafolio de instrumentos de renta fija y variable.
