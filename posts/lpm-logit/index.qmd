@@ -1,0 +1,205 @@
+---
+title: "Qualitative Response Regression Models"
+subtitle: 'LPM vs Logit models'
+author: "Juan Quinonez"
+date: "2022-12-19"
+format: html
+editor: visual
+bibliography: bibliography.bib
+tbl-cap-location: top
+---
+
+In this post we will explore two different models that use a dichotomous variable as the response variable.
+
+## Introduction
+
+Generally, the dependent variable is a quantitative variable, however, sometimes the response variable may be a qualitative variable. This is the case, for example, when trying to forecast some one's favorite ice cream flavor or to predict if someone will default on his payments in the next few months.
+
+Working with qualitative variable can be simplified by converting it into a binary variable. This can be done by creating a variable for each category of the qualitative variable that is 1 when one category is present and 0 when it is not.
+
+This post will detail the Linear Probability Model (LPM) and the Logistic Regression Model (LOGIT) as covered by Gujarati [-@Guj2003]. For these models we will use the Pima Indians Diabetes Database from the `mlbench` package. With this dataset will try to predict if a person has type 2 diabetes based on some explanatory variables. This database has information of 724 patients where 475 of them didn't have diabetes. [@tbl-pidb] shows the summary statistics of this database.
+
+```{r}
+#| label: tbl-pidb
+#| tbl-cap: Pima Indians Diabetes Database
+
+# Data
+data("PimaIndiansDiabetes2", package = "mlbench")
+
+PimaIndiansDiabetes2 <- PimaIndiansDiabetes2 |>
+  dplyr::select(-c(triceps, insulin)) |> # Excluded due to too many missing values
+  na.omit() |> 
+  dplyr::mutate(mass = cut(mass,
+                           breaks = c(-Inf, 18.5, 24.9, 29.9, Inf),
+                           labels = c('Underweight', 'Normal range', 'Overweight', 'Obese'),
+                           right = TRUE))
+
+labelled::var_label(PimaIndiansDiabetes2) <- 
+  list(pregnant = 'Number of times pregnant',
+       glucose = 'Plasma glucose concentration',
+       pressure = 'Diastolic blood pressure (mm Hg)',
+       mass = 'Body mass index',
+       pedigree = 'Diabetes pedigree function',
+       age = 'Age (years)',
+       diabetes = 'Test for diabetes')
+
+
+# Summary table
+PimaIndiansDiabetes2 |> 
+  gtsummary::tbl_summary(by = diabetes,
+                         statistic = list(gtsummary::all_continuous() ~ "{mean} ({sd})",
+                                          gtsummary::all_categorical() ~ "{n} / {N} ({p}%)"),
+                         digits = gtsummary::all_continuous() ~ 2) |> 
+  gtsummary::add_overall()
+```
+
+## Linear Probability Model
+
+Generally we can consider a linear model as:
+
+$$
+Y_i = \beta_1 + \beta_2 X_i + u_i
+$$ {#eq-lpm} where $X_i$ represents a vector of independent variables and $Y_i$ takes value of 1 if the person has diabetes and 0 otherwise. [@eq-lpm] instead of being a typical linear regression is now a linear probabilistic regression, because the dependent variable is a binary variable. Now $Y_i$ will give us the conditional probability given $X_i$, $P(Y_i = 1|X_i)$. Assuming that $E(u_i) = 0$, we can write:
+
+$$
+E(Y_i|X_I) = \beta_1 + \beta_2 X_i = P_i
+$$ {#eq-lpm-exp} The LPM model has several shortfalls that are detailed in Gujarati [-@Guj2003]. In this section we will focus on the fact that these models are unbounded and can thus produce probabilities outside $0 \leq P_i \leq 1$. If we try to explain the probability of having diabetes using plasma glucose concentration we'll get the response shown in [@fig-lpm].
+
+```{r}
+#| label: fig-lpm
+#| fig-cap: Linear Probability Model
+
+# Data
+test <- PimaIndiansDiabetes2 |> 
+  dplyr::mutate(diabetes = ifelse(diabetes == 'pos',1,0))
+
+# LPM
+lpm <- lm(diabetes ~ glucose, data = test)
+test$lpm.yhat <- predict(lpm)
+
+# Plot
+library(ggplot2)
+test |> 
+  ggplot() +
+  geom_point(aes(y = diabetes, x = glucose)) +
+  geom_line(aes(y = lpm.yhat, x = glucose, color = 'LPM'), linewidth = 1.3) +
+  labs(x = "Glucose",
+       y = "Diabetes") +
+  scale_color_manual(name = 'Model',
+                     breaks = c('LPM'),
+                     values = c("LPM" = "blue")) +
+  theme_minimal()
+```
+
+This graphs shows that for plasma glucose concentration lower than 76.5 the probability of having diabetes is negative and if the plasma glucose concentration is higher than 208, then this probability will be over 100%.
+
+## Logit Models
+
+Binary variables often follow a Bernoulli probability distribution, which can be refreshed in Rodríguez [-@Rod2007].
+
+Consider [@eq-lpm-1] as an alternative representation of [@eq-lpm], where $Z_i=\beta_1+\beta_2X_i$.
+
+$$
+P_i = E(Y_i|X_i) = \frac{1}{1+e^{-(\beta_1 + \beta_2X_i)}} = \frac{e^{Z_i}}{1 + e^{Z_i}}
+$$ {#eq-lpm-1}
+
+This new definition bounds $P_i$ between 0 and 1, overcoming LPM shortfall, however, there is a new problem: we can no longer use OLS to estimate the coefficients directly. If $P_i$ is the probability of being diabetic, then $1-P_i$ is the probability of *not* being diabetic. The *odds-ratio* in favor of being diabetic is:
+
+$$
+\frac{P_i}{1-P_i}=\frac{\frac{e^{Z_i}}{1+e^{Z_i}}}{\frac{1}{1+e^{Z_i}}}=\frac{1+e^{Z_i}}{1+e^{-Z_i}}=e^{Z_i}
+$$ {#eq-odds-ratio}
+
+If $P_i=0.8$ then the odds of being diabetic is 4 times larger than not being diabetic. Now, taking the natural log of [@eq-odds-ratio] we'll get a linear version of the last equation.
+
+$$
+L_i = \ln{\frac{P_i}{1-P_i}}=Z_i=\beta_1+\beta_2X_i
+$$ Although we cannot estimate the parameters using regular OLS, we can do so using maximum likelihood approach. [@fig-lpm_logit] shows the result of the last exercise, using logit model and comparing it to the LPM.
+
+```{r}
+#| label: fig-lpm_logit
+#| fig-cap: Linear Probability Model vs Logit Model
+
+# Logit
+logit <- glm(diabetes ~ glucose, 
+             data = test,
+             family = binomial(link="logit"))
+test$logit.yhat <- predict(logit, type="response")
+
+# Plot
+test |> 
+  ggplot() +
+  geom_point(aes(y = diabetes, x = glucose)) +
+  geom_line(aes(y = lpm.yhat, x = glucose, color = 'LPM'), linewidth = 1.3) +
+  geom_line(aes(y = logit.yhat, x = glucose, color = 'Logit'), linewidth = 1.5) +
+  labs(x = "Glucose",
+       y = "Diabetes") +
+  scale_color_manual(name = 'Model',
+                     breaks = c('LPM', 'Logit'),
+                     values = c("LPM" = "blue",
+                                "Logit" = "green")) +
+  theme_minimal()
+```
+
+We can further explore other factors that can explain the probability of being diabetic and use this for illustrate how to interpret the results. We will be estimating the following model
+
+$$
+L_i=\frac{P_i}{1-P_i}=\beta_1+\beta2Age+\beta3Glucose+\beta4Mass+u_i
+$$
+
+```{r}
+#| label: tbl-logit
+#| tbl-cap: Logit Model Summary
+
+# Logit
+logit <- glm(diabetes ~ age + glucose, 
+             data = test,
+             family = binomial(link="logit"))
+
+# LPM
+lpm <- glm(diabetes ~ age + glucose, 
+             data = test,
+             family = gaussian(link = "identity"))
+
+# Table
+sjPlot::tab_model(lpm, logit,
+                  dv.labels = c("LPM", "Logit"),
+                  digits = 4,
+                  transform = 'exp')
+```
+
+[@tbl-logit] shows the summary for both LP and Logit models. Each of the coefficients of the Logit model is a *partial slope* and measures the change in the estimated logit for a unit change in the value of the given regressor (holding other regressors constant). For one unit increase of the *Age* variable (holding all other variables constant) there will be a (1.0269 - 1 = ) 2.69% increase in the odds of having diabetes.
+
+Dickson [-@Dickson2022] expands on how to interpret odd ratios with very useful examples.
+
+## Model Comparison
+
+Both models (Logit and Linear Probability) yield very similar results, because both of them are very simple. In order to compare both models we'll be analyzing the difference of the predicted probability (Logit vs LPM) of having diabetes. [@fig-prob] shows that the LP model yields negative probabilities for some cases, whereas the Logit model will always produce positive probabilities.
+
+```{r}
+#| label: fig-prob
+#| fig-cap: Probability Comparison
+
+# Logit
+test$logit.prob <- predict(logit, type="response")
+
+# LPM
+test$lpm.prob <- predict(lpm, type="response")
+
+# Difference
+test$model_diff <- test$logit.prob - test$lpm.prob
+
+test |> 
+  ggplot() +
+  geom_line(aes(y = test$logit.prob, x = test$lpm.prob)) +
+  geom_vline(xintercept = 0) +
+  labs(x = 'LPM',
+       y = 'Logit') +
+  theme_classic()
+
+```
+
+## Conclussion
+
+In this post we explored two different models that use a dichotomous variable as the response variable (LPM and Logit model). We highlighted the main difference and commented on how to interpreted the results of the Logit model.
+
+In further post we will cover how to analyze model performance, comparing the results of different models and determining which one is better.

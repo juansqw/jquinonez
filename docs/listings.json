@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/lpm-logit/index.html",
       "/posts/value-risk/index.html",
       "/posts/visa_garch/index.html",
       "/posts/series-cs/importance/index.html",
