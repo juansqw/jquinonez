@@ -2,11 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Juan Quinonez">
+<meta name="dcterms.date" content="2022-12-19">
 
 <title>Juan Quinonez - Qualitative Response Regression Models</title>
 <style>
@@ -18,9 +19,10 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -47,48 +49,19 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+/* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
 }
-.hanging div.csl-entry {
+.hanging-indent div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -102,8 +75,7 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}
-</style>
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -138,10 +110,12 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../styles.css">
@@ -158,38 +132,40 @@ div.csl-indent {
     <span class="navbar-title">Juan Quinonez</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-series" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-series" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
  <span class="menu-text">Series</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-series">    
         <li>
-    <a class="dropdown-item" href="../../series-cs.html">
+    <a class="dropdown-item" href="../../series-cs.html" rel="" target="">
  <span class="dropdown-text">Credit Score</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/juansqw"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/juansqw" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.linkedin.com/in/juan-quinonez"><i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="https://www.linkedin.com/in/juan-quinonez" rel="" target=""><i class="bi bi-linkedin" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -213,6 +189,12 @@ div.csl-indent {
             </div>
     </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">December 19, 2022</p>
+      </div>
+    </div>
     
       
     </div>
@@ -220,7 +202,7 @@ div.csl-indent {
   
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
@@ -233,6 +215,7 @@ div.csl-indent {
   </ul>
 </nav>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
@@ -281,14 +264,13 @@ div.csl-indent {
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  gtsummary<span class="sc">::</span><span class="fu">add_overall</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="tbl-pidb" class="anchored">
 
 <div id="keojjdbuil" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#keojjdbuil) .gt_table {
+#keojjdbuil .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -313,7 +295,7 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-:where(#keojjdbuil) .gt_heading {
+#keojjdbuil .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -325,12 +307,12 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-:where(#keojjdbuil) .gt_caption {
+#keojjdbuil .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-:where(#keojjdbuil) .gt_title {
+#keojjdbuil .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -342,7 +324,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-:where(#keojjdbuil) .gt_subtitle {
+#keojjdbuil .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -354,13 +336,13 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-:where(#keojjdbuil) .gt_bottom_border {
+#keojjdbuil .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#keojjdbuil) .gt_col_headings {
+#keojjdbuil .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -375,7 +357,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-:where(#keojjdbuil) .gt_col_heading {
+#keojjdbuil .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -395,7 +377,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-:where(#keojjdbuil) .gt_column_spanner_outer {
+#keojjdbuil .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -407,15 +389,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-:where(#keojjdbuil) .gt_column_spanner_outer:first-child {
+#keojjdbuil .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#keojjdbuil) .gt_column_spanner_outer:last-child {
+#keojjdbuil .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#keojjdbuil) .gt_column_spanner {
+#keojjdbuil .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -427,7 +409,7 @@ div.csl-indent {
   width: 100%;
 }
 
-:where(#keojjdbuil) .gt_group_heading {
+#keojjdbuil .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -453,7 +435,7 @@ div.csl-indent {
   text-align: left;
 }
 
-:where(#keojjdbuil) .gt_empty_group_heading {
+#keojjdbuil .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -468,15 +450,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-:where(#keojjdbuil) .gt_from_md > :first-child {
+#keojjdbuil .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#keojjdbuil) .gt_from_md > :last-child {
+#keojjdbuil .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#keojjdbuil) .gt_row {
+#keojjdbuil .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -495,7 +477,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-:where(#keojjdbuil) .gt_stub {
+#keojjdbuil .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -508,7 +490,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-:where(#keojjdbuil) .gt_stub_row_group {
+#keojjdbuil .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -522,11 +504,11 @@ div.csl-indent {
   vertical-align: top;
 }
 
-:where(#keojjdbuil) .gt_row_group_first td {
+#keojjdbuil .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#keojjdbuil) .gt_summary_row {
+#keojjdbuil .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -536,16 +518,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-:where(#keojjdbuil) .gt_first_summary_row {
+#keojjdbuil .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#keojjdbuil) .gt_first_summary_row.thick {
+#keojjdbuil .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#keojjdbuil) .gt_last_summary_row {
+#keojjdbuil .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -555,7 +537,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-:where(#keojjdbuil) .gt_grand_summary_row {
+#keojjdbuil .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -565,7 +547,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-:where(#keojjdbuil) .gt_first_grand_summary_row {
+#keojjdbuil .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -575,11 +557,11 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-:where(#keojjdbuil) .gt_striped {
+#keojjdbuil .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#keojjdbuil) .gt_table_body {
+#keojjdbuil .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -588,7 +570,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-:where(#keojjdbuil) .gt_footnotes {
+#keojjdbuil .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -602,7 +584,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-:where(#keojjdbuil) .gt_footnote {
+#keojjdbuil .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -611,7 +593,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-:where(#keojjdbuil) .gt_sourcenotes {
+#keojjdbuil .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -625,7 +607,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-:where(#keojjdbuil) .gt_sourcenote {
+#keojjdbuil .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -633,127 +615,149 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-:where(#keojjdbuil) .gt_left {
+#keojjdbuil .gt_left {
   text-align: left;
 }
 
-:where(#keojjdbuil) .gt_center {
+#keojjdbuil .gt_center {
   text-align: center;
 }
 
-:where(#keojjdbuil) .gt_right {
+#keojjdbuil .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#keojjdbuil) .gt_font_normal {
+#keojjdbuil .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#keojjdbuil) .gt_font_bold {
+#keojjdbuil .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#keojjdbuil) .gt_font_italic {
+#keojjdbuil .gt_font_italic {
   font-style: italic;
 }
 
-:where(#keojjdbuil) .gt_super {
+#keojjdbuil .gt_super {
   font-size: 65%;
 }
 
-:where(#keojjdbuil) .gt_footnote_marks {
+#keojjdbuil .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#keojjdbuil) .gt_asterisk {
+#keojjdbuil .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#keojjdbuil) .gt_indent_1 {
+#keojjdbuil .gt_indent_1 {
   text-indent: 5px;
 }
 
-:where(#keojjdbuil) .gt_indent_2 {
+#keojjdbuil .gt_indent_2 {
   text-indent: 10px;
 }
 
-:where(#keojjdbuil) .gt_indent_3 {
+#keojjdbuil .gt_indent_3 {
   text-indent: 15px;
 }
 
-:where(#keojjdbuil) .gt_indent_4 {
+#keojjdbuil .gt_indent_4 {
   text-indent: 20px;
 }
 
-:where(#keojjdbuil) .gt_indent_5 {
+#keojjdbuil .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
-<table class="gt_table"><caption>Table&nbsp;1:  Pima Indians Diabetes Database </caption>
-  
-  <thead class="gt_col_headings">
-    <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="<strong>Characteristic</strong>"><strong>Characteristic</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>Overall</strong>, N = 724<sup class=&quot;gt_footnote_marks&quot;>1</sup>"><strong>Overall</strong>, N = 724<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>neg</strong>, N = 475<sup class=&quot;gt_footnote_marks&quot;>1</sup>"><strong>neg</strong>, N = 475<sup class="gt_footnote_marks">1</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>pos</strong>, N = 249<sup class=&quot;gt_footnote_marks&quot;>1</sup>"><strong>pos</strong>, N = 249<sup class="gt_footnote_marks">1</sup></th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="label" class="gt_row gt_left">Number of times pregnant</td>
-<td headers="stat_0" class="gt_row gt_center">3.87 (3.36)</td>
-<td headers="stat_1" class="gt_row gt_center">3.32 (3.03)</td>
-<td headers="stat_2" class="gt_row gt_center">4.91 (3.71)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">Plasma glucose concentration</td>
-<td headers="stat_0" class="gt_row gt_center">121.88 (30.75)</td>
-<td headers="stat_1" class="gt_row gt_center">111.02 (25.01)</td>
-<td headers="stat_2" class="gt_row gt_center">142.61 (30.06)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">Diastolic blood pressure (mm Hg)</td>
-<td headers="stat_0" class="gt_row gt_center">72.40 (12.38)</td>
-<td headers="stat_1" class="gt_row gt_center">70.91 (12.17)</td>
-<td headers="stat_2" class="gt_row gt_center">75.25 (12.29)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">Body mass index</td>
-<td headers="stat_0" class="gt_row gt_center"></td>
-<td headers="stat_1" class="gt_row gt_center"></td>
-<td headers="stat_2" class="gt_row gt_center"></td></tr>
-    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Underweight</td>
-<td headers="stat_0" class="gt_row gt_center">4 / 724 (0.6%)</td>
-<td headers="stat_1" class="gt_row gt_center">4 / 475 (0.8%)</td>
-<td headers="stat_2" class="gt_row gt_center">0 / 249 (0%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Normal range</td>
-<td headers="stat_0" class="gt_row gt_center">96 / 724 (13%)</td>
-<td headers="stat_1" class="gt_row gt_center">89 / 475 (19%)</td>
-<td headers="stat_2" class="gt_row gt_center">7 / 249 (2.8%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Overweight</td>
-<td headers="stat_0" class="gt_row gt_center">171 / 724 (24%)</td>
-<td headers="stat_1" class="gt_row gt_center">133 / 475 (28%)</td>
-<td headers="stat_2" class="gt_row gt_center">38 / 249 (15%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">&nbsp;&nbsp;&nbsp;&nbsp;Obese</td>
-<td headers="stat_0" class="gt_row gt_center">453 / 724 (63%)</td>
-<td headers="stat_1" class="gt_row gt_center">249 / 475 (52%)</td>
-<td headers="stat_2" class="gt_row gt_center">204 / 249 (82%)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">Diabetes pedigree function</td>
-<td headers="stat_0" class="gt_row gt_center">0.47 (0.33)</td>
-<td headers="stat_1" class="gt_row gt_center">0.43 (0.30)</td>
-<td headers="stat_2" class="gt_row gt_center">0.56 (0.38)</td></tr>
-    <tr><td headers="label" class="gt_row gt_left">Age (years)</td>
-<td headers="stat_0" class="gt_row gt_center">33.35 (11.77)</td>
-<td headers="stat_1" class="gt_row gt_center">31.26 (11.56)</td>
-<td headers="stat_2" class="gt_row gt_center">37.34 (11.12)</td></tr>
-  </tbody>
-  
-  <tfoot class="gt_footnotes">
-    <tr>
-      <td class="gt_footnote" colspan="4"><sup class="gt_footnote_marks">1</sup> Mean (SD); n / N (%)</td>
-    </tr>
-  </tfoot>
+
+<div id="tbl-pidb" class="anchored">
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Table&nbsp;1: Pima Indians Diabetes Database</caption>
+<thead class="gt_col_headings">
+<tr class="header">
+<th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
+<th id="<strong>Overall</strong>, N = 724<sup class=&quot;gt_footnote_marks&quot;>1</sup>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>Overall</strong>, N = 724<sup>1</sup></th>
+<th id="<strong>neg</strong>, N = 475<sup class=&quot;gt_footnote_marks&quot;>1</sup>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>neg</strong>, N = 475<sup>1</sup></th>
+<th id="<strong>pos</strong>, N = 249<sup class=&quot;gt_footnote_marks&quot;>1</sup>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>pos</strong>, N = 249<sup>1</sup></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Number of times pregnant</td>
+<td class="gt_row gt_center" headers="stat_0">3.87 (3.36)</td>
+<td class="gt_row gt_center" headers="stat_1">3.32 (3.03)</td>
+<td class="gt_row gt_center" headers="stat_2">4.91 (3.71)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Plasma glucose concentration</td>
+<td class="gt_row gt_center" headers="stat_0">121.88 (30.75)</td>
+<td class="gt_row gt_center" headers="stat_1">111.02 (25.01)</td>
+<td class="gt_row gt_center" headers="stat_2">142.61 (30.06)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Diastolic blood pressure (mm Hg)</td>
+<td class="gt_row gt_center" headers="stat_0">72.40 (12.38)</td>
+<td class="gt_row gt_center" headers="stat_1">70.91 (12.17)</td>
+<td class="gt_row gt_center" headers="stat_2">75.25 (12.29)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Body mass index</td>
+<td class="gt_row gt_center" headers="stat_0"></td>
+<td class="gt_row gt_center" headers="stat_1"></td>
+<td class="gt_row gt_center" headers="stat_2"></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Underweight</td>
+<td class="gt_row gt_center" headers="stat_0">4 / 724 (0.6%)</td>
+<td class="gt_row gt_center" headers="stat_1">4 / 475 (0.8%)</td>
+<td class="gt_row gt_center" headers="stat_2">0 / 249 (0%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Normal range</td>
+<td class="gt_row gt_center" headers="stat_0">96 / 724 (13%)</td>
+<td class="gt_row gt_center" headers="stat_1">89 / 475 (19%)</td>
+<td class="gt_row gt_center" headers="stat_2">7 / 249 (2.8%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Overweight</td>
+<td class="gt_row gt_center" headers="stat_0">171 / 724 (24%)</td>
+<td class="gt_row gt_center" headers="stat_1">133 / 475 (28%)</td>
+<td class="gt_row gt_center" headers="stat_2">38 / 249 (15%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Obese</td>
+<td class="gt_row gt_center" headers="stat_0">453 / 724 (63%)</td>
+<td class="gt_row gt_center" headers="stat_1">249 / 475 (52%)</td>
+<td class="gt_row gt_center" headers="stat_2">204 / 249 (82%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Diabetes pedigree function</td>
+<td class="gt_row gt_center" headers="stat_0">0.47 (0.33)</td>
+<td class="gt_row gt_center" headers="stat_1">0.43 (0.30)</td>
+<td class="gt_row gt_center" headers="stat_2">0.56 (0.38)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Age (years)</td>
+<td class="gt_row gt_center" headers="stat_0">33.35 (11.77)</td>
+<td class="gt_row gt_center" headers="stat_1">31.26 (11.56)</td>
+<td class="gt_row gt_center" headers="stat_2">37.34 (11.12)</td>
+</tr>
+</tbody><tfoot class="gt_footnotes">
+<tr class="odd">
+<td colspan="4" class="gt_footnote"><sup>1</sup> Mean (SD); n / N (%)</td>
+</tr>
+</tfoot>
+
 </table>
 </div>
+
 </div>
 </div>
 </div>
@@ -795,7 +799,7 @@ E(Y_i|X_I) = \beta_1 + \beta_2 X_i = P_i
 <div id="fig-lpm" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="index_files/figure-html/fig-lpm-1.png" class="img-fluid figure-img" width="672"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1: Linear Probability Model</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;1: Linear Probability Model</figcaption>
 </figure>
 </div>
 </div>
@@ -844,7 +848,7 @@ L_i = \ln{\frac{P_i}{1-P_i}}=Z_i=\beta_1+\beta_2X_i
 <div id="fig-lpm_logit" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="index_files/figure-html/fig-lpm_logit-1.png" class="img-fluid figure-img" width="672"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;2: Linear Probability Model vs Logit Model</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;2: Linear Probability Model vs Logit Model</figcaption>
 </figure>
 </div>
 </div>
@@ -874,63 +878,75 @@ L_i=\frac{P_i}{1-P_i}=\beta_1+\beta2Age+\beta3Glucose+\beta4Mass+u_i
 </details>
 <div class="cell-output-display">
 <div id="tbl-logit" class="anchored">
-
-<table style="border-collapse:collapse; border:none;"><caption>Table&nbsp;2:  Logit Model Summary </caption>
-<tbody><tr>
-<th style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm;  text-align:left; ">&nbsp;</th>
-<th colspan="3" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">LPM</th>
-<th colspan="3" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">Logit</th>
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<caption>Table&nbsp;2: Logit Model Summary</caption>
+<colgroup>
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">&nbsp;</td>
+<td colspan="3" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">LPM</td>
+<td colspan="3" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">Logit</td>
 </tr>
-<tr>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  text-align:left; ">Predictors</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">Estimates</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">CI</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">p</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">Odds Ratios</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">CI</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  col7">p</td>
+<tr class="even">
+<td style="text-align: center; border-bottom: 1px solid; font-style: italic; font-weight: normal;">Predictors</td>
+<td style="text-align: center; border-bottom: 1px solid; font-style: italic; font-weight: normal;">Estimates</td>
+<td style="text-align: center; border-bottom: 1px solid; font-style: italic; font-weight: normal;">CI</td>
+<td style="text-align: center; border-bottom: 1px solid; font-style: italic; font-weight: normal;">p</td>
+<td style="text-align: center; border-bottom: 1px solid; font-style: italic; font-weight: normal;">Odds Ratios</td>
+<td style="text-align: center; border-bottom: 1px solid; font-style: italic; font-weight: normal;">CI</td>
+<td style="text-align: center;">p</td>
 </tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">(Intercept)</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.5050</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.4414&nbsp;–&nbsp;0.5777</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "><strong>&lt;0.001</strong></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.0020</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.0007&nbsp;–&nbsp;0.0050</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7"><strong>&lt;0.001</strong></td>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">(Intercept)</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.5050</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.4414&nbsp;–&nbsp;0.5777</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.0020</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.0007&nbsp;–&nbsp;0.0050</td>
+<td style="text-align: center;"><strong>&lt;0.001</strong></td>
 </tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Age(years)</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">1.0051</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">1.0024&nbsp;–&nbsp;1.0078</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "><strong>&lt;0.001</strong></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">1.0269</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">1.0115&nbsp;–&nbsp;1.0426</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7"><strong>0.001</strong></td>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">Age(years)</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.0051</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.0024&nbsp;–&nbsp;1.0078</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.0269</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.0115&nbsp;–&nbsp;1.0426</td>
+<td style="text-align: center;"><strong>0.001</strong></td>
 </tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Plasma glucose<br>concentration</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">1.0071</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">1.0060&nbsp;–&nbsp;1.0081</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "><strong>&lt;0.001</strong></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">1.0379</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">1.0311&nbsp;–&nbsp;1.0451</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7"><strong>&lt;0.001</strong></td>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">Plasma glucose<br>
+concentration</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.0071</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.0060&nbsp;–&nbsp;1.0081</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.0379</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.0311&nbsp;–&nbsp;1.0451</td>
+<td style="text-align: center;"><strong>&lt;0.001</strong></td>
 </tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm; border-top:1px solid;">Observations</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="3">724</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="3">724</td>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">Observations</td>
+<td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">724</td>
+<td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">724</td>
 </tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">R<sup>2</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">0.253</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">0.256</td>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">R<sup>2</sup></td>
+<td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.253</td>
+<td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.256</td>
 </tr>
-
-</tbody></table>
-
+</tbody>
+</table>
 </div>
+
+
 </div>
 </div>
 <p><a href="#tbl-logit">Table&nbsp;2</a> shows the summary for both LP and Logit models. Each of the coefficients of the Logit model is a <em>partial slope</em> and measures the change in the estimated logit for a unit change in the value of the given regressor (holding other regressors constant). For one unit increase of the <em>Age</em> variable (holding all other variables constant) there will be a (1.0269 - 1 = ) 2.69% increase in the odds of having diabetes.</p>
@@ -963,7 +979,7 @@ L_i=\frac{P_i}{1-P_i}=\beta_1+\beta2Age+\beta3Glucose+\beta4Mass+u_i
 <div id="fig-prob" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="index_files/figure-html/fig-prob-1.png" class="img-fluid figure-img" width="672"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;3: Probability Comparison</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;3: Probability Comparison</figcaption>
 </figure>
 </div>
 </div>
@@ -978,24 +994,25 @@ L_i=\frac{P_i}{1-P_i}=\beta_1+\beta2Age+\beta3Glucose+\beta4Mass+u_i
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-Dickson2022" class="csl-entry" role="doc-biblioentry">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-Dickson2022" class="csl-entry" role="listitem">
 Dickson, L. 2022. <span>“How to Interpret the Odds Ratio with Categorical Variables in Logistic Regression.”</span> <a href="https://towardsdatascience.com/how-to-interpret-the-odds-ratio-with-categorical-variables-in-logistic-regression-5bb38e3fc6a8">https://towardsdatascience.com/how-to-interpret-the-odds-ratio-with-categorical-variables-in-logistic-regression-5bb38e3fc6a8</a>.
 </div>
-<div id="ref-Guj2003" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Guj2003" class="csl-entry" role="listitem">
 Gujarati, D. 2003. <span>“Basic Econometrics.”</span>
 </div>
-<div id="ref-Rod2007" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Rod2007" class="csl-entry" role="listitem">
 Rodríguez, G. 2007. <span>“Lecture Notes on Generalized Linear Models.”</span> <a href="https://grodri.github.io/glms/notes/">https://grodri.github.io/glms/notes/</a>.
 </div>
-</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinonez,
-  author = {Juan Quinonez},
+</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{quinonez2022,
+  author = {Quinonez, Juan},
   title = {Qualitative {Response} {Regression} {Models}},
+  date = {2022-12-19},
   langid = {en}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinonez" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
-Juan Quinonez. n.d. <span>“Qualitative Response Regression
-Models.”</span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-quinonez2022" class="csl-entry quarto-appendix-citeas" role="listitem">
+Quinonez, Juan. 2022. <span>“Qualitative Response Regression
+Models.”</span> December 19, 2022.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1024,9 +1041,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -1091,6 +1122,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {

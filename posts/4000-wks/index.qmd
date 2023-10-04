@@ -1,0 +1,61 @@
+---
+title: "Four Thousand Weeks - Book review"
+author: "Juan Quinonez"
+date: "2023-11-01"
+categories: [books, reviews, money]
+draft: true
+---
+
+\[Book summary\]
+
+\[Get quote from Seneca, on the shortness of life\]
+
+This book "is an exploration of a saner way of relating to time and a toolbox of practical ideas for doing so".
+
+Here I'll just add some notes and quotes from the book.
+
+## Part I: Choosing to Choose
+
+### Chapter 1 - The limit-Embracing Life
+
+Life was "easy" before time (farming the land and relying on seasons). When coordinating task was becoming more common, agree-upon method of measuring time was needed. This means that we cant live without time.
+
+"Before, time was just the medium in which life unfolded, the stuff that life was made of. Afterward, once time and life had been separated in most people's minds, time became a *thing* that you *used*... Once time is a resource to be used, you start to feel pressure, whether from external forces or from yourself, to use it well, and to berate yourself when you feel you've wasted it. When you're faced with too many demands, it's easy to assume that the only answer must be to make *better use* of time, by becoming more efficient... instead of asking whether the demands themselves might be unreasonable."
+
+"In practical terms, a limit-embracing attitude to time means organizing your days with understanding that you definitely *won't* have time for everything you want to do, or that people want you to do - and so, at the very least, you can STOP beating yourself up for failing.
+
+"You teach best what you need to learn" - Richard Bach
+
+::: column-margin
+We know from *the first fundamental theorem of calculus* that for $x$ in $[a, b]$:
+
+Burkeman (2021)
+:::
+
+### Chapter 2 - Luck and risk
+
+-   This chapter explained that people's success (or misfortune) is a matter of luck. Bill Gates was lucky enough to study at (this) school that had access to a computer so that he (along with some friends) could set the foundations of Microsoft.
+
+-   Don't act on other people's success (or misfortune), rather study patterns.
+
+### Chapter 3 - Never enough
+
+-   Learn when enough is enough.
+
+-   It's hard to reach a goal when the goal post is moving every day.
+
+### Chapter 4 - Confounding compounding
+
+-   Planet Earth was covered by ice several times. "The big take away from ice age is that you don't need tremendous force to create tremendous results".
+
+### Chapter 5 - Getting wealthy vs staying wealthy
+
+-   There are a million books ways to get wealthy, but the only way to stay wealthy: some combination of frugality and paranoia.
+
+-   If I had to summarize money success in one word it would be "survival"
+
+-   Getting money requires taking risks, being optimistic, and putting yourself out there.
+
+-   But keeping money requires the opposite of taking risk.
+
+    -   It requires humility, and fear that what you've made can be taken away just from you just as fast.
